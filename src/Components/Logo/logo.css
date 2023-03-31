@@ -1,6 +1,7 @@
 .logo {
-    float: right;
-    width: 120px;
+    /* float: right;
+    width: 120px; */
+    flex-grow: 2;
     height: 31px;
     margin: 16px 0px 16px 24px;
 }

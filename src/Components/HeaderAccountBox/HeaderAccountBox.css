@@ -1,0 +1,11 @@
+.account-box{
+    flex-grow: 1;
+}
+.account-box .ant-space-item {
+    color: var(--bs-light)
+}
+
+.ant-dropdown {
+    top: 64px !important;
+    width: 300px;
+}
