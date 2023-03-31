@@ -4,6 +4,7 @@ import { Logo } from '../Logo/logo';
 import SearchBox from "../HeaderSerachBox/searchBox";
 import './HeaderComponent.css';
 import HeaderAccountBox from "../HeaderAccountBox/HeaderAccountBox";
+import HeaderCartButton from "../HeaderCartButton/HeaderCartButton";
 
 const { Header } = Layout;
 
@@ -14,7 +15,8 @@ const HeaderComponent = () => {
             <Logo cssClass="logo" />
             <SearchBox />
             <HeaderAccountBox />
-            <div style={{ flexGrow: "1", color:"#fff"}}>سبد خرید</div>
+            <HeaderCartButton />
+            {/* <div style={{ flexGrow: "1", color:"#fff"}}>سبد خرید</div> */}
         </Header>
     )
 }
