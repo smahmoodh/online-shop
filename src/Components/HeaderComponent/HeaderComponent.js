@@ -11,13 +11,12 @@ const { Header } = Layout;
 const HeaderComponent = () => {
 
     return (
-        <Header className="header">
+        <React.Fragment>
             <Logo cssClass="logo" />
             <SearchBox />
             <HeaderAccountBox />
             <HeaderCartButton />
-            {/* <div style={{ flexGrow: "1", color:"#fff"}}>سبد خرید</div> */}
-        </Header>
+        </React.Fragment>
     )
 }
 

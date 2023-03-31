@@ -15,7 +15,9 @@ function App() {
       <CartState>
         <ConfigProvider direction="rtl" >
           <Layout className="layout">
-            <HeaderComponent />
+            <Header className="header">
+              <HeaderComponent />
+            </Header>
             <Content className='container'>
               <Outlet />
             </Content>
