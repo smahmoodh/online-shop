@@ -1,0 +1,57 @@
+type User {
+  id: ID
+  firstName: String
+  lastName: String
+  phone: String
+  password: String
+  email: String
+}
+
+input inputUser {
+  email: String!
+  password: String
+  firstName: String
+  lastName: String
+  phone: String
+}
+
+type Paginate{
+    total: Int
+    limit: Int
+    page: Int
+    pages: Int
+}
+
+type AuthPayload {
+  token: String
+  user: User
+}
+
+type Token {
+    token: String!
+    user: User
+}
+
+type userData{
+    users: [User]
+    paginate: Paginate
+}
+
+type Query {
+    allUsers: [User]
+    getUser(id: ID!): User
+    getAllUser(page: Int, limit: Int): userData
+}
+
+type Mutation {
+    
+
+    signup(
+        input: inputUser
+    ): AuthPayload
+    login(
+        email: String!
+        password: String!
+    ): AuthPayload
+}
+
