@@ -6,6 +6,7 @@
         url("../fonts/iranyekanweblight.ttf") format("truetype"),
         url("../fonts/iranyekanweblight.woff2") format("woff2");
 }
+
 :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
@@ -28,7 +29,13 @@
     --bs-danger: #dc3545;
     --bs-light: #f8f9fa;
     --bs-dark: #212529;
-    --bs-font-sans-serif: "iranyekanweblight", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --primary: #fafafa;
+    --secondary: #ffffff;
+    --accent: #0089ff;
+    --primary-text: #2e343b;
+    --secondary-text: #696969;
+    --font-family: "iranyekanweblight";
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))
 }
@@ -41,9 +48,7 @@
 }
 
 html,
-body,
-#root,
-#root>section {
+body {
     height: 100%;
     position: relative;
 }
@@ -59,7 +64,7 @@ span,
 b,
 li,
 ol {
-    font-family: "iranyekanweblight" !important;
+    font-family: var(--font-family), var(--bs-font-sans-serif);
 }
 
 h1,
@@ -68,7 +73,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "iranyekanweblight" !important;
+    font-family: var(--font-family),
+        var(--bs-font-sans-serif);
     font-weight: bold !important;
 
 }
@@ -79,7 +85,8 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-    font-family: "iranyekanweblight" !important;
+    font-family: var(--font-family),
+        var(--bs-font-sans-serif);
     font-weight: bold !important;
 }
 
@@ -89,7 +96,8 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "iranyekanweblight" !important;
+    font-family: var(--font-family),
+        var(--bs-font-sans-serif);
 }
 
 p,
@@ -97,7 +105,8 @@ body,
 #top-bar,
 .nav-dropdown,
 .top-bar-nav a.nav-top-link {
-    font-family: "iranyekanweblight" !important;
+    font-family: var(--font-family),
+        var(--bs-font-sans-serif);
 }
 
 html {
@@ -105,40 +114,39 @@ html {
 }
 
 body {
+    background: var(--primary);
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
+    margin: 0;
+    font-family: var(--font-family),
+        var(--bs-font-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--primary-text);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent
 }
 
 code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
+    font-family: var(--bs-font-monospace);
 }
 
 a {
     text-decoration: none;
+    color: #333;
+}
+
+a:hover {
+    color: #777;
 }
 
 img {
     max-width: 100%;
     height: auto;
 }
-body {
-    margin: 0;
-    font-family: var(--bs-font-sans-serif);
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    -webkit-text-size-adjust: 100%;
-    -webkit-tap-highlight-color: transparent
-}
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
-}
+
 .container,
 .container-fluid,
 .container-lg,
@@ -152,7 +160,9 @@ code {
     margin-right: auto;
     margin-left: auto
 }
-
+.container-fluid {
+    max-width: 1600px !important;
+}
 @media (min-width: 576px) {
 
     .container,
@@ -201,4 +211,8 @@ code {
     .container-xxl {
         max-width: 1320px
     }
+}
+
+.layout, .layout>*:not(.header) {
+    background-color: var(--primary);
 }

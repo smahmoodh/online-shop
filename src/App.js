@@ -5,6 +5,7 @@ import { Breadcrumb, Layout, Menu, theme, ConfigProvider } from 'antd';
 import HeaderComponent from './Components/HeaderComponent/HeaderComponent';
 import AuthContextProvider from './Context/Auth/authContext';
 import CartState from './Context/Cart/CartState';
+import FooterComponent from './Components/FooterComponent/FooterComponent';
 const { Header, Content, Footer } = Layout;
 
 
@@ -18,9 +19,12 @@ function App() {
             <Header className="header">
               <HeaderComponent />
             </Header>
-            <Content className='container'>
+            <Content className='container-fluid'>
               <Outlet />
             </Content>
+            <Footer className='container'>
+              <FooterComponent />
+            </Footer>
           </Layout>
         </ConfigProvider>
       </CartState>
