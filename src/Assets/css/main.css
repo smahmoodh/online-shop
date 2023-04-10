@@ -146,7 +146,12 @@ img {
     max-width: 100%;
     height: auto;
 }
-
+ul,
+li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
 .container,
 .container-fluid,
 .container-lg,
@@ -159,6 +164,17 @@ img {
     padding-left: var(--bs-gutter-x, .75rem);
     margin-right: auto;
     margin-left: auto
+}
+.mode_desktop body {
+    font-size: 16px;
+}
+
+.mode_mobile body {
+    font-size: 13px;
+}
+.mode_desktop body div[class^="ant-col"],
+.mode_desktop body div[class*=" ant-col"]{
+font-size: 16px;
 }
 .container-fluid {
     max-width: 1600px !important;
@@ -215,4 +231,7 @@ img {
 
 .layout, .layout>*:not(.header) {
     background-color: var(--primary);
+}
+.page_home .main-content {
+    padding-top: 32px;
 }

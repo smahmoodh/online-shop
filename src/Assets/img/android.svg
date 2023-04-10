@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="android_1_" width="16" height="16" viewBox="0 0 16 16">
+    <defs>
+        <style>
+            .cls-2{fill:#939393}
+        </style>
+    </defs>
+    <path id="Rectangle_2918" fill="none" d="M0 0H16V16H0z"/>
+    <g id="Group_10486">
+        <path id="Path_15544" d="M1 8a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1z" class="cls-2"/>
+        <path id="Path_15545" d="M15 8a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0V9a1 1 0 0 0-1-1z" class="cls-2"/>
+        <path id="Rectangle_2919" d="M0 0H10V8H0z" class="cls-2" transform="translate(3 8)"/>
+        <path id="Path_15546" d="M3 7h10a4.966 4.966 0 0 0-1.837-3.843l1.253-1.88a.5.5 0 1 0-.832-.554L10.331 2.6a4.814 4.814 0 0 0-4.662 0L4.416.723a.5.5 0 1 0-.832.554l1.253 1.88A4.966 4.966 0 0 0 3 7z" class="cls-2"/>
+    </g>
+</svg>

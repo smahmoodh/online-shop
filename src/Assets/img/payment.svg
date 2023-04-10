@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <defs>
+        <style>
+            .cls-2,.cls-3{fill:none;stroke:#0089ff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2.3px}.cls-3{stroke:#939393}
+        </style>
+    </defs>
+    <g id="hand-card" transform="translate(0 .105)">
+        <path id="Rectangle_985" fill="none" d="M0 0H48V48H0z" transform="translate(0 -.105)"/>
+        <g id="Group_6943" transform="translate(1.5 6.457)">
+            <path id="Line_36" d="M0 0L17.302 0" class="cls-2" transform="translate(0 7.5)"/>
+            <path id="Line_37" d="M0 0L27.638 0" class="cls-2" transform="translate(0 13.5)"/>
+            <path id="Line_38" d="M0 0L7.5 0" class="cls-2" transform="translate(6 18.75)"/>
+            <path id="Path_28" d="M32 25.871V33H2V9h30v4.5" class="cls-3" transform="translate(-2 -9)"/>
+            <path id="Path_29" d="M41 30c-4.5 0-9-4.5-9-9h-4.5a6 6 0 0 1-6-6H35a15 15 0 0 1 15 15 15 15 0 0 1-15 15H18.5a4.5 4.5 0 0 1-4.5-4.5V39h13.5" class="cls-3" transform="translate(-5 -10.5)"/>
+            <path id="Path_30" d="M12.5 45.5A4.5 4.5 0 0 1 8 41" class="cls-3" transform="translate(-3.5 -17)"/>
+        </g>
+    </g>
+</svg>

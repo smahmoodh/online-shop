@@ -3,7 +3,7 @@ import './MenuItems.css';
 
 const MenuItems = (props) => {
     return (
-        <ul className="menuItems">
+        <ul className={props.cssClass}>
             {props.children}
         </ul>
     )

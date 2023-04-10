@@ -7,15 +7,19 @@ import ProductsSwiperList from '../../Components/ProductsSwiperList/ProductsSwip
 const HomePage = (props) => {
     return (
         <React.Fragment>
-            <Space
-                direction="vertical"
-                size="large"
-                style={{display: 'flex',}}
-            >
-                <SlideShow />
-                <ProductsSwiperList />
-                <ProductsSwiperList />
-            </Space>
+            <div className='page_home'>
+                <div className='main-content'>
+                    <Space
+                        direction="vertical"
+                        size="large"
+                        style={{ display: 'flex', }}
+                    >
+                        <SlideShow />
+                        <ProductsSwiperList />
+                        <ProductsSwiperList />
+                    </Space>
+                </div>
+            </div>
         </React.Fragment>
     )
 }

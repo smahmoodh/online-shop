@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <defs>
+        <style>
+            .cls-2{fill:none;stroke:#0089ff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-width:2.3px}
+        </style>
+    </defs>
+    <g id="cart-return" transform="translate(0 .105)">
+        <path id="Rectangle_983" fill="none" d="M0 0H48V48H0z" transform="translate(0 -.105)"/>
+        <g id="Group_6941" transform="translate(1.5 1.207)">
+            <path id="Path_23" d="M36.5 23.25V16.5A4.5 4.5 0 0 0 32 12h-9" class="cls-2" transform="translate(-7.25 -4.5)"/>
+            <path id="Path_24" d="M29 16l-6-6 6-6" class="cls-2" transform="translate(-7.25 -2.5)"/>
+            <circle id="Ellipse_13" cx="4.5" cy="4.5" r="4.5" class="cls-2" transform="translate(9 36)"/>
+            <circle id="Ellipse_14" cx="4.5" cy="4.5" r="4.5" class="cls-2" transform="translate(34.5 36)"/>
+            <path id="Path_25" fill="none" stroke="#939393" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.3px" d="M38.75 9.5h6.75l-3 22.5h-30L8 2H2" transform="translate(-2 -2)"/>
+        </g>
+    </g>
+</svg>

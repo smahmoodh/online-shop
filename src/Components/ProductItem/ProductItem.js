@@ -1,5 +1,6 @@
 import React from 'react';
 import { StarFilled } from '@ant-design/icons';
+import { seperatNumber, calcDiscount } from '../../Utils/utilities';
 import './ProductItem.css'
 
 
@@ -28,11 +29,11 @@ const ProductItem = (props) => {
                                 <div className="price-area">
                                     <span className="old-price">
                                         <span className="old-price-inner">
-                                            <span className="off-percent">22%</span>
-                                            <span className="amount-old-price">{props.product.price * 0.8}</span>
+                                            <span className="off-percent">{calcDiscount(props.product.price, props.product.price * 1.8, 1) }%</span>
+                                            <span className="amount-old-price">{seperatNumber(props.product.price * 1.8)}</span>
                                         </span>
                                     </span>
-                                    <span className="price"><span className="price-amount">{props.product.price}</span><span className="currency">تومان</span></span>
+                                    <span className="price"><span className="price-amount">{seperatNumber(props.product.price)}</span><span className="currency">تومان</span></span>
                                 </div>
                                 <div className="rate-section">
                                     <span className="reviewcount">(10)</span>

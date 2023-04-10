@@ -1,11 +1,12 @@
 import React from 'react';
-import './Assets/css/main.css';
 import { Outlet } from "react-router-dom";
 import { Breadcrumb, Layout, Menu, theme, ConfigProvider } from 'antd';
+import { StyleProvider } from '@ant-design/cssinjs';
 import HeaderComponent from './Components/HeaderComponent/HeaderComponent';
 import AuthContextProvider from './Context/Auth/authContext';
 import CartState from './Context/Cart/CartState';
 import FooterComponent from './Components/FooterComponent/FooterComponent';
+import './Assets/css/main.css';
 const { Header, Content, Footer } = Layout;
 
 
@@ -22,7 +23,7 @@ function App() {
             <Content className='container-fluid'>
               <Outlet />
             </Content>
-            <Footer className='container'>
+            <Footer className='footer'>
               <FooterComponent />
             </Footer>
           </Layout>

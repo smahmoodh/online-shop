@@ -4,10 +4,11 @@ import './MenuItem.css';
 
 const MenuItem = (props) => {
     return (
-        <li className="menuItem">
+        <li className={props.cssClass}>
             <NavLink to={props.link} title={props.title}>
-                {props.children}
+                {props.text}
             </NavLink>
+            {props.children}
         </li>
     )
 }
