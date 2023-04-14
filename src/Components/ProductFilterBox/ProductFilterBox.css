@@ -1,0 +1,111 @@
+#side_right .box {
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    background-color: var(--bs-white);
+    margin-bottom: 16px;
+    color: #2e343b;
+}
+
+#side_right .box>.block>.header {
+    border-bottom: solid 1px #e6e6e6;
+}
+
+#box_filter .header>span {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 24px;
+    text-align: right;
+    color: #2e343b;
+    padding: 24px;
+    display: block;
+}
+
+#side_right .box>.block>.header>span {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 24px;
+    text-align: right;
+    color: #2e343b;
+    padding: 24px;
+    display: block;
+}
+
+.filter-box {
+    padding: 24px;
+    border-bottom: solid 1px #e6e6e6;
+}
+
+.filter-label {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+
+.filter_products .checkboxes {
+    position: relative;
+    max-height: 333px;
+    overflow: auto;
+}
+
+.filter_products .checkboxes li {
+    padding: 0 !important;
+    margin: 0;
+}
+
+.filter_products .checkboxes label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px;
+    margin: 0;
+    width: 100%;
+}
+
+.filter_products .checkboxes span {
+    float: left;
+    color: #aaa;
+    font-size: 80%;
+}
+
+.filter-label-inline {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+label.inline {
+    float: right;
+    margin: 0;
+    line-height: 22px;
+}
+
+#box_filter .filter-label {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 0;
+}
+
+#box_filter .body #filter_brand .checkboxes {
+    margin-top: 15px;
+    padding-left: 10px;
+}
+
+#box_filter .body #filter_brand .checkboxes li label {
+    padding: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 36px;
+    text-align: right;
+    color: #2e343b;
+}
+
+#box_filter .body #filter_brand .checkboxes li label input {
+    position: relative;
+    top: 4px;
+    margin-left: 3px;
+}
+
+#box_filter hr {
+    display: none;
+}

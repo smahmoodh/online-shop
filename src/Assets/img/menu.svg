@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <defs>
+        <style>
+            .cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="menu-3" transform="translate(0 .379)">
+        <path id="Rectangle_8" fill="none" d="M0 0H24V24H0z" transform="translate(0 -.379)"/>
+        <g id="Group_7" transform="translate(0 3.701)">
+            <path id="Path_5" d="M23 13H1a1 1 0 0 1 0-2h22a1 1 0 0 1 0 2z" class="cls-2" transform="translate(0 -4)"/>
+            <path id="Path_6" d="M23 6H1a1 1 0 0 1 0-2h22a1 1 0 0 1 0 2z" class="cls-2" transform="translate(0 -4)"/>
+            <path id="Path_7" d="M23 20H12a1 1 0 0 1 0-2h11a1 1 0 0 1 0 2z" class="cls-2" transform="translate(0 -4)"/>
+        </g>
+    </g>
+</svg>

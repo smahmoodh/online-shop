@@ -9,6 +9,7 @@ import NotFound from './Pages/404';
 import Orders from './Pages/Client/Orders';
 import Profile from './Pages/Client/Profile';
 import Cart from './Pages/Client/Cart';
+import ProductCategory from './Components/ProductCategory/ProductCategory';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -22,7 +23,7 @@ root.render(
         <Route path="/orders" element={<Orders />} />
         <Route path="/profile" element={<Profile />} />
         <Route exact path="/cart" element={<Cart />} />
-
+        <Route path="/category" element={<ProductCategory/>} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Route>

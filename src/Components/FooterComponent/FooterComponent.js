@@ -210,14 +210,14 @@ const FooterComponent = () => {
                 </div>
             </div>
             <div className='footer-bottom'>
-                <div class="container-fluid">
-                    <div class="footer-text">
+                <div className="container-fluid">
+                    <div className="footer-text">
                         فروشگاه اینترنتی تخصصی React
                         زمان یکی از با ارزش ترین سرمایه های انسانی است که باید از آن به بهترین نحو ممکن استفاده شود. اهمیت زمان آنقدر برای بشر شناخته شده بود که همواره سعی داشته و دارد، تا برای رسیدن به اهداف خود کوتاه ترین مسیر را انتخاب کند. مسیری که او را زودتر به هدف مورد نظر خود برساند. در سال های اخیر با فراگیر شدن گجت های هوشمند مثل موبایل، تبلت و یا ابزارهای الکترونیکی دیگر مثل لپ تاپ، دوربین، کنسول بازی و... سبب شد شاخه ای جدید در بازار شکل بگیرد که هدف از آن رفع نیازهای React از گروه محصولات باشد		    </div>
-                    <div class="footer-license">
+                    <div className="footer-license">
                         استفاده از مطالب   <a href="#" title="تست">فروشگاه اینترنتی React</a>  فقط برای مقاصد غیر تجاری و با ذکر منبع بلامانع است. کليه حقوق اين سايت محفوظ می‌باشد
 
-                        <div class="licence-area">
+                        <div className="licence-area">
                             <span id="shopfa_license">
                                 فروشگاه ساخته شده با <a target="_blank" title="react" href="#">React</a>
                             </span>

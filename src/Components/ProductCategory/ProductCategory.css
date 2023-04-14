@@ -1,0 +1,202 @@
+.sides #side_top,
+.sides #side_bottom {
+    clear: both;
+}
+.header-box {
+    background: #fff;
+    padding: 10px 30px;
+}
+
+.header-box .header {
+    padding: 32px 0 0;
+}
+
+.header-box .header h1 {
+    height: 26px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 26px;
+    text-align: right;
+    color: #2e343b;
+    position: relative;
+    top: -3px;
+}
+
+.mode_desktop .header-box .header h1:before {
+    content: "";
+    background-image: url("../../Assets/img/description-title.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    padding: 0 10px;
+    margin-left: 16px;
+}
+
+.mode_mobile .header-box .header h1 {
+    background-image: url("../../Assets/img/description-title.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: auto;
+    padding-right: 30px;
+    margin-left: 16px;
+}
+
+.header-box .body {
+    padding: 32px 0 0;
+}
+.filter_items {
+    display: flex !important;
+}
+#box_products .filter_items {
+    margin-bottom: 15px;
+    border-bottom: solid 1px #e6e6e6;
+}
+#box_products .filter_items .filter-title {
+    flex-grow: 2;
+}
+#box_products .filter_items .btn-sorts {
+    padding: 0;
+    position: relative;
+    padding-right: 100px;
+}
+#box_products .filter_items .btn-sorts:before {
+    content: "مرتب سازی :";
+    position: absolute;
+    font-size: 13px;
+    line-height: 19px;
+    color: #939393;
+    right: 31px;
+    top: 3px;
+}
+
+#box_products .filter_items .btn-sorts a {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 19px;
+    text-align: right;
+    color: #2e343b;
+    margin: 0 5px;
+    padding: 0 0 15px;
+    border-bottom: 3px solid transparent;
+    display: inline-block;
+}
+#box_products .filter_items .btn-sorts a:first-child {
+    margin-right: 0;
+}
+#box_products .filter_items .btn-sorts a.btn-default {
+    color: #0089ff;
+    line-height: 21px;
+    font-size: 13px;
+    border-bottom-color: #0089ff;
+}
+#box_products .filter_items .btn-sorts button {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 19px;
+    text-align: right;
+    color: #2e343b;
+    margin: 0 5px;
+    padding: 0 0 15px;
+    border-bottom: 3px solid transparent;
+    display: inline-block;
+    border-radius: 0;
+}
+
+#box_products .filter_items .btn-sorts button:first-child {
+    margin-right: 0;
+}
+
+#box_products .filter_items .btn-sorts button.btn-default {
+    color: #0089ff;
+    font-size: 13px;
+    border-bottom-color: #0089ff;
+}
+#box_products .filter_items .filter-number {
+    display: block;
+    flex-grow: 1;
+}
+
+
+
+.pageslist {
+    margin: 10px 0;
+    padding: 0;
+    clear: both;
+    text-align: center;
+}
+
+.pageslist .btn {
+    font-family: Arial;
+    padding: 10px 16px;
+}
+
+.pageslist {
+    margin: 24px 0;
+}
+
+.pageslist a.btn,
+.pageslist a.btn-light {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #2e343b;
+    width: 32px;
+    height: 32px;
+    padding: 4px 4px;
+    border: 0;
+    margin: 0 12.5px;
+}
+
+.pageslist a.btn .fa-chevron-left:before,
+.pageslist a.btn .fa-chevron-right:before,
+.pageslist a.btn-light .fa-chevron-left:before,
+.pageslist a.btn-light .fa-chevron-right:before {
+    content: "\e92d";
+    font-family: "fjanebi";
+    line-height: 24px;
+    color: #939393;
+}
+
+.pageslist a.btn .fa-chevron-left:before,
+.pageslist a.btn-light .fa-chevron-left:before {
+    content: "\e92d";
+}
+
+.pageslist a.btn .fa-chevron-right:before,
+.pageslist a.btn-light .fa-chevron-right:before {
+    content: "\e919";
+}
+
+.pageslist a.btn-custom,
+.pageslist a.btn:hover,
+.pageslist a.btn:focus,
+.pageslist a.btn:active,
+.pageslist a.btn-light:active,
+.pageslist .btn-light:not(:disabled):not(.disabled).active,
+.pageslist .btn-light:not(:disabled):not(.disabled):active,
+.pageslist .show>.btn-light.dropdown-toggle {
+    border-radius: 4px;
+    box-shadow: 0 3px 5px 0 rgba(0, 137, 255, 0.32);
+    background-color: #0089ff;
+    color: #fff;
+}
+
+.pageslist a.btn-custom .fa-chevron-left:before,
+.pageslist a.btn-custom .fa-chevron-right:before,
+.pageslist a.btn:hover .fa-chevron-left:before,
+.pageslist a.btn:hover .fa-chevron-right:before,
+.pageslist a.btn:focus .fa-chevron-left:before,
+.pageslist a.btn:focus .fa-chevron-right:before,
+.pageslist a.btn:active .fa-chevron-left:before,
+.pageslist a.btn:active .fa-chevron-right:before,
+.pageslist a.btn-light:active .fa-chevron-left:before,
+.pageslist a.btn-light:active .fa-chevron-right:before,
+.pageslist .btn-light:not(:disabled):not(.disabled).active .fa-chevron-left:before,
+.pageslist .btn-light:not(:disabled):not(.disabled).active .fa-chevron-right:before,
+.pageslist .btn-light:not(:disabled):not(.disabled):active .fa-chevron-left:before,
+.pageslist .btn-light:not(:disabled):not(.disabled):active .fa-chevron-right:before,
+.pageslist .show>.btn-light.dropdown-toggle .fa-chevron-left:before,
+.pageslist .show>.btn-light.dropdown-toggle .fa-chevron-right:before {
+    color: #fff;
+}
