@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { LeftOutlined } from '@ant-design/icons';
 import { Col, Row, Pagination, Button, Space } from 'antd';
 import { Link } from 'react-router-dom';
+import { handleClickScroll } from '../../Utils/utilities';
 
 import './ProductCategory.css';
 import ProductFilterBox from '../ProductFilterBox/ProductFilterBox';
@@ -13,21 +14,34 @@ const ProductCategory = () => {
     const [limit, setLimit] = useState(24);
     const [sortType, setSortType] = useState('desc');
     const [products, setProducts] = useState([]);
+    const [total, setTotal] = useState(24);
+    const [perPage, setPerPage] = useState(24);
+    let totalProducts = 0;
+    let page = 1;
 
-    const fetchData = async (sort, limit, sortType) => {
+    const fetchData = async (sort, limit, sortType, page) => {
         console.log("sort" + sort);
         console.log("limit" + limit);
         console.log("sortType" + sortType);
-        const response = await fetch(`https://json.xstack.ir/api/v1/products?limit=${limit}&sort=${sort}&sortType=${sortType}`)
+        const response = await fetch(`https://json.xstack.ir/api/v1/products?limit=${limit}&sort=${sort}&sortType=${sortType}&page=${page}`)
         const data = await response.json();
         console.log(data);
+        setPerPage(data.per_page);
+        setTotal(data.total_pages * data.per_page);
+        totalProducts = (data.total_pages * data.per_page);
         setProducts(data)
         // setProducts(data.data.filter(category => category.category_id === 4) )
     }
 
     useEffect(() => {
-        fetchData(sort, limit, sortType)
+        fetchData(sort, limit, sortType, page)
     }, []);
+
+    const onChange = (page) => {
+        console.log(page);
+        fetchData(sort, limit, sortType, page);
+        handleClickScroll();
+    };
 
     const changeSort = (sortModel) => {
         console.log('changeSort');
@@ -35,37 +49,42 @@ const ProductCategory = () => {
             case 'new':
                 console.log('changeSort new');
                 setSort('new');
-                fetchData(sort, limit, sortType);
+                fetchData(sortModel, limit, sortType, 1);
                 break;
             case 'view':
                 console.log('changeSort view');
                 setSort('view');
-                fetchData(sort, limit, sortType);
+                fetchData(sortModel, limit, sortType, 1);
                 break;
             case 'popular':
                 console.log('changeSort popular');
                 setSort('view');
-                fetchData(sort, limit, sortType);
+                fetchData(sortModel, limit, sortType, 1);
                 break;
             case 'sell_count':
                 console.log('changeSort sale');
                 setSort('sell_count');
-                fetchData(sort, limit, sortType);
+                fetchData(sortModel, limit, sortType, 1);
                 break;
             case 'lowprice':
                 console.log('changeSort sale');
                 setSort('peice');
                 setSortType('asc');
-                fetchData(sort, limit, sortType);
+                fetchData(sortModel, limit, sortType, 1);
                 break;
             case 'highprice':
                 console.log('changeSort sale');
                 setSort('peice');
                 setSortType('desc');
-                fetchData(sort, limit, sortType);
+                fetchData(sortModel, limit, sortType, 1);
                 break;
 
         }
+    }
+
+    const changeLimit = (limitCount) => {
+        setLimit(limitCount);
+        fetchData(sort, limitCount, sortType, 1);
     }
 
     return (
@@ -114,11 +133,11 @@ const ProductCategory = () => {
                                         <div className="filter-number">
                                             <span className="float-left">
                                                 تعداد نمایش
-                                                <span className="visible-lg-inline-block d-none d-lg-inline-block d-xl-inline-block">
-                                                    <a className="btn btn-sm btn-limit btn-link " data-limit="12" dideo-checked="true">12</a>
-                                                    <a className="btn btn-sm btn-limit btn-link " data-limit="24" dideo-checked="true">24</a>
-                                                    <a className="btn btn-sm btn-limit btn-default btn-light " data-limit="48" dideo-checked="true">48</a>
-                                                </span>
+                                                <Space size={0}>
+                                                    <Button type="link" className={`${limit == 12 ? 'btn-default' : ''}`} onClick={() => changeLimit(12)}>12</Button>
+                                                    <Button type="link" className={`${limit == 24 ? 'btn-default' : ''}`} onClick={() => changeLimit(24)}>24</Button>
+                                                    <Button type="link" className={`${limit == 48 ? 'btn-default' : ''}`} onClick={() => changeLimit(48)}>48</Button>
+                                                </Space>
                                             </span>
                                         </div>
                                     </div>
@@ -140,13 +159,14 @@ const ProductCategory = () => {
                                         )}
                                     </div>
                                 </div>
+                                <div className="pageslist">
+                                    <Pagination defaultCurrent={1} total={total} pageSize={perPage} onChange={onChange} />
+                                </div>
                             </div>
                         </div>
                     </Col>
                 </Row >
-                <div className="pageslist">
-                    <Pagination total={products.total_pages * products.per_page} pageSize={24} hideOnSinglePage={true}  />
-                </div>
+                
             </div >
         </>
     )

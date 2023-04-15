@@ -64,10 +64,11 @@
     content: "مرتب سازی :";
     position: absolute;
     font-size: 13px;
-    line-height: 19px;
+    line-height: 17px;
     color: #939393;
-    right: 31px;
+    right: 25px;
     top: 3px;
+    font-family: var(--font-family), var(--bs-font-sans-serif);
 }
 
 #box_products .filter_items .btn-sorts a {
@@ -116,87 +117,73 @@
     display: block;
     flex-grow: 1;
 }
+#box_products .filter_items .filter-number .ant-space-item {
+    display: inline-block;
+}
 
+#box_products .filter_items .filter-number .ant-space-item button {
+    padding: 0.25rem 0.5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
 
+#box_products .filter_items .filter-number .ant-space-item button.btn-default {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+#box_products .content.header-box {
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+#box_products .products.mode-1>div.ant-col.price_on {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+#box_products .products.mode-1>div .thumb {
+    margin: 8px -8px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+.products.mode-1>div .thumb .product-link {
+    display: block;
+}
 
 .pageslist {
-    margin: 10px 0;
     padding: 0;
     clear: both;
     text-align: center;
-}
-
-.pageslist .btn {
-    font-family: Arial;
-    padding: 10px 16px;
-}
-
-.pageslist {
     margin: 24px 0;
 }
 
-.pageslist a.btn,
-.pageslist a.btn-light {
-    font-size: 16px;
-    line-height: 24px;
-    text-align: center;
-    color: #2e343b;
-    width: 32px;
-    height: 32px;
-    padding: 4px 4px;
-    border: 0;
-    margin: 0 12.5px;
+.pageslist .ant-pagination-options{
+display: none;
 }
-
-.pageslist a.btn .fa-chevron-left:before,
-.pageslist a.btn .fa-chevron-right:before,
-.pageslist a.btn-light .fa-chevron-left:before,
-.pageslist a.btn-light .fa-chevron-right:before {
-    content: "\e92d";
-    font-family: "fjanebi";
-    line-height: 24px;
-    color: #939393;
-}
-
-.pageslist a.btn .fa-chevron-left:before,
-.pageslist a.btn-light .fa-chevron-left:before {
-    content: "\e92d";
-}
-
-.pageslist a.btn .fa-chevron-right:before,
-.pageslist a.btn-light .fa-chevron-right:before {
-    content: "\e919";
-}
-
-.pageslist a.btn-custom,
-.pageslist a.btn:hover,
-.pageslist a.btn:focus,
-.pageslist a.btn:active,
-.pageslist a.btn-light:active,
-.pageslist .btn-light:not(:disabled):not(.disabled).active,
-.pageslist .btn-light:not(:disabled):not(.disabled):active,
-.pageslist .show>.btn-light.dropdown-toggle {
+li.ant-pagination-item.ant-pagination-item-active {
     border-radius: 4px;
     box-shadow: 0 3px 5px 0 rgba(0, 137, 255, 0.32);
     background-color: #0089ff;
     color: #fff;
 }
 
-.pageslist a.btn-custom .fa-chevron-left:before,
-.pageslist a.btn-custom .fa-chevron-right:before,
-.pageslist a.btn:hover .fa-chevron-left:before,
-.pageslist a.btn:hover .fa-chevron-right:before,
-.pageslist a.btn:focus .fa-chevron-left:before,
-.pageslist a.btn:focus .fa-chevron-right:before,
-.pageslist a.btn:active .fa-chevron-left:before,
-.pageslist a.btn:active .fa-chevron-right:before,
-.pageslist a.btn-light:active .fa-chevron-left:before,
-.pageslist a.btn-light:active .fa-chevron-right:before,
-.pageslist .btn-light:not(:disabled):not(.disabled).active .fa-chevron-left:before,
-.pageslist .btn-light:not(:disabled):not(.disabled).active .fa-chevron-right:before,
-.pageslist .btn-light:not(:disabled):not(.disabled):active .fa-chevron-left:before,
-.pageslist .btn-light:not(:disabled):not(.disabled):active .fa-chevron-right:before,
-.pageslist .show>.btn-light.dropdown-toggle .fa-chevron-left:before,
-.pageslist .show>.btn-light.dropdown-toggle .fa-chevron-right:before {
-    color: #fff;
+li.ant-pagination-item.ant-pagination-item-active a {
+    color: #fff
+}
+
+.ant-pagination .ant-pagination-item:not(.ant-pagination-item-active):hover,
+.ant-pagination .ant-pagination-next:not(.ant-pagination-disabled):hover,
+.ant-pagination .ant-pagination-prev:not(.ant-pagination-disabled):hover {
+    border-radius: 4px;
+    box-shadow: 0 3px 5px 0 rgba(0, 137, 255, 0.32);
+    background-color: #0089ff;
+}
+
+.ant-pagination .ant-pagination-item:not(.ant-pagination-item-active):hover a,
+.ant-pagination .ant-pagination-next:not(.ant-pagination-disabled):hover a,
+.ant-pagination .ant-pagination-next:not(.ant-pagination-disabled):hover button,
+.ant-pagination .ant-pagination-prev:not(.ant-pagination-disabled):hover a,
+.ant-pagination .ant-pagination-prev:not(.ant-pagination-disabled):hover button {
+    color: #fff
 }

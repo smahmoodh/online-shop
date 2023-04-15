@@ -64,3 +64,11 @@ export function calcDiscount(price, regularPrice, type) {
     return Math.round((calcDiscount(price, regularPrice) / regularPrice) * 100);
   else return regularPrice - price;
 }
+
+export const handleClickScroll = () => {
+  const element = document.getElementById('root');
+  if (element) {
+    // 👇 Will scroll smoothly to the top of the next section
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
