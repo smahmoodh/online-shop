@@ -122,21 +122,21 @@ const ProductCategory = () => {
                                     <div className="filter_items clearfix form-inline">
                                         <div className="filter-title">
                                             <Space wrap className="btn-sorts">
-                                                <Button type="link" className={`${sort == 'new' ? 'btn-default':''}`} onClick={() => changeSort('new')}>جدیدترین ها</Button>
-                                                <Button type="link" className={`${sort == 'view' ? 'btn-default' : ''}`} onClick={() => changeSort('view')}>پربازدیدترین ها</Button>
-                                                <Button type="link" className={`${sort == 'popular' ? 'btn-default' : ''}`} onClick={() => changeSort('popular')}>محبوب‌‌ترین</Button>
-                                                <Button type="link" className={`${sort == 'sell_count' ? 'btn-default' : ''}`} onClick={() => changeSort('sell_count')}>پرفروش‌ترین</Button>
-                                                <Button type="link" className={`${sort == 'price' && sortType =='asc' ? 'btn-default':''}`} onClick={() => changeSort('lowprice')}>ارزان‌ترین</Button>
-                                                <Button type="link" className={`${sort == 'price' && sortType == 'desc' ? 'btn-default':''}`} onClick={() => changeSort('highprice')}>گران‌ترین</Button>
+                                                <Button type="link" className={`${sort === 'new' ? 'btn-default':''}`} onClick={() => changeSort('new')}>جدیدترین ها</Button>
+                                                <Button type="link" className={`${sort === 'view' ? 'btn-default' : ''}`} onClick={() => changeSort('view')}>پربازدیدترین ها</Button>
+                                                <Button type="link" className={`${sort === 'popular' ? 'btn-default' : ''}`} onClick={() => changeSort('popular')}>محبوب‌‌ترین</Button>
+                                                <Button type="link" className={`${sort === 'sell_count' ? 'btn-default' : ''}`} onClick={() => changeSort('sell_count')}>پرفروش‌ترین</Button>
+                                                <Button type="link" className={`${sort === 'price' && sortType ==='asc' ? 'btn-default':''}`} onClick={() => changeSort('lowprice')}>ارزان‌ترین</Button>
+                                                <Button type="link" className={`${sort === 'price' && sortType === 'desc' ? 'btn-default':''}`} onClick={() => changeSort('highprice')}>گران‌ترین</Button>
                                             </Space>
                                         </div>
                                         <div className="filter-number">
                                             <span className="float-left">
                                                 تعداد نمایش
                                                 <Space size={0}>
-                                                    <Button type="link" className={`${limit == 12 ? 'btn-default' : ''}`} onClick={() => changeLimit(12)}>12</Button>
-                                                    <Button type="link" className={`${limit == 24 ? 'btn-default' : ''}`} onClick={() => changeLimit(24)}>24</Button>
-                                                    <Button type="link" className={`${limit == 48 ? 'btn-default' : ''}`} onClick={() => changeLimit(48)}>48</Button>
+                                                    <Button type="link" className={`${limit === 12 ? 'btn-default' : ''}`} onClick={() => changeLimit(12)}>12</Button>
+                                                    <Button type="link" className={`${limit === 24 ? 'btn-default' : ''}`} onClick={() => changeLimit(24)}>24</Button>
+                                                    <Button type="link" className={`${limit === 48 ? 'btn-default' : ''}`} onClick={() => changeLimit(48)}>48</Button>
                                                 </Space>
                                             </span>
                                         </div>
