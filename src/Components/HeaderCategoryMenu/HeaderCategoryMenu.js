@@ -60,7 +60,7 @@ const HeaderCategoryMenu = () => {
                 <ul className="menu-2 menu-custom menu-2 mega three-level" id="menu_header">
                     {categories.map(category => (
                         <li className={` ${category.hasSub ? 'deep-3' : ''}`} key={category.id}>
-                            <Link title={category.slug} className="page_1 sf-with-ul" to={`/${category.slug}`} target="_blank">
+                            <Link title={category.slug} className="page_1 sf-with-ul" to={`/category?address=${category.slug}`} target="_blank">
                                 {category.name}
                                 <DownOutlined />
                             </Link>
@@ -69,7 +69,7 @@ const HeaderCategoryMenu = () => {
                                     <ul>
                                         <div className="ul-title">
                                             <span className="link-title"> {category.name}</span>
-                                            <Link to={`/${category.slug}`} className="more-items">
+                                            <Link to={`/category?address=${category.slug}`} className="more-items">
                                                 مشاهده همه محصولات {category.name}
                                                 <LeftOutlined />
                                             </Link>
@@ -79,7 +79,7 @@ const HeaderCategoryMenu = () => {
                                             <ul>
                                                 {category.children.map(subCategory => 
                                                     <li key={subCategory.id}>
-                                                        <Link title={subCategory.slug} className="page_14" to={`/${subCategory.slug}`}>{subCategory.name}</Link>
+                                                        <Link title={subCategory.slug} className="page_14" to={`/category?address=${category.slug},${subCategory.slug}`}>{subCategory.name}</Link>
                                                     </li>
                                                 )}
                                             </ul>

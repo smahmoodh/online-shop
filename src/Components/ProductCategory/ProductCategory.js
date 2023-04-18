@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { LeftOutlined } from '@ant-design/icons';
 import { Col, Row, Pagination, Button, Space } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { handleClickScroll } from '../../Utils/utilities';
 
 import './ProductCategory.css';
@@ -10,6 +10,7 @@ import ProductItem from '../ProductItem/ProductItem';
 
 const ProductCategory = () => {
     
+    const [params, setParams] = useState(null);
     const [sort, setSort] = useState('view');
     const [limit, setLimit] = useState(24);
     const [sortType, setSortType] = useState('desc');
@@ -18,12 +19,17 @@ const ProductCategory = () => {
     const [perPage, setPerPage] = useState(24);
     let totalProducts = 0;
     let page = 1;
+    const location = useLocation();
 
-    const fetchData = async (sort, limit, sortType, page) => {
+    const fetchData = async (address = '', sort, limit, sortType, page) => {
         console.log("sort" + sort);
         console.log("limit" + limit);
         console.log("sortType" + sortType);
-        const response = await fetch(`https://json.xstack.ir/api/v1/products?limit=${limit}&sort=${sort}&sortType=${sortType}&page=${page}`)
+        const cat = await fetch(`https://json.xstack.ir/api/v1/category/${address}`);
+        console.log(await cat.json());
+        const response = await fetch(`https://json.xstack.ir/api/v1/products?limit=${limit}&sort=${sort}&sortType=${sortType}&page=${page}`);
+        // const response = await fetch(`https://json.xstack.ir/api/v1/category/${address}?limit=${limit}&sort=${sort}&sortType=${sortType}&page=${page}`);
+        
         const data = await response.json();
         console.log(data);
         setPerPage(data.per_page);
@@ -34,8 +40,21 @@ const ProductCategory = () => {
     }
 
     useEffect(() => {
-        fetchData(sort, limit, sortType, page)
+        const queryParams = new URLSearchParams(location.search);
+        const values = queryParams.get('address');
+        const arr = values.split(',');
+        const address = arr[arr.length - 1]; 
+        console.log(arr.length);
+        console.log(arr);
+        console.log(arr[arr.length - 1]);
+        fetchData(address, sort, limit, sortType, page);
     }, []);
+    useEffect(() => {
+        console.log('Location changed');
+        const queryParams = new URLSearchParams(location.search);
+        const values = queryParams.get('address');
+
+    }, [location]);
 
     const onChange = (page) => {
         console.log(page);
