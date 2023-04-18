@@ -18,6 +18,7 @@ const ProductCategory = () => {
     const [total, setTotal] = useState(24);
     const [perPage, setPerPage] = useState(24);
     let totalProducts = 0;
+    let address = '';
     let page = 1;
     const location = useLocation();
 
@@ -25,40 +26,51 @@ const ProductCategory = () => {
         console.log("sort" + sort);
         console.log("limit" + limit);
         console.log("sortType" + sortType);
-        const cat = await fetch(`https://json.xstack.ir/api/v1/category/${address}`);
-        console.log(await cat.json());
-        const response = await fetch(`https://json.xstack.ir/api/v1/products?limit=${limit}&sort=${sort}&sortType=${sortType}&page=${page}`);
-        // const response = await fetch(`https://json.xstack.ir/api/v1/category/${address}?limit=${limit}&sort=${sort}&sortType=${sortType}&page=${page}`);
+
+        // const response = await fetch(`https://json.xstack.ir/api/v1/products?limit=${limit}&sort=${sort}&sortType=${sortType}&page=${page}`);
+        // const data = await response.json();
+        // console.log(data);
+        // setPerPage(data.per_page);
+        // setTotal(data.total_pages * data.per_page);
+        // totalProducts = (data.total_pages * data.per_page);
+        // setProducts(data)
         
-        const data = await response.json();
-        console.log(data);
-        setPerPage(data.per_page);
-        setTotal(data.total_pages * data.per_page);
-        totalProducts = (data.total_pages * data.per_page);
-        setProducts(data)
+        
+        // const response = await fetch(`https://json.xstack.ir/api/v1${address}?limit=${limit}&sort=${sort}&sortType=${sortType}&page=${page}`);
+        // const data = await response.json();
+
+        const response = await fetch(
+            `https://json.xstack.ir/api/v1${address}?limit=${limit}&sort=${sort}&sortType=${sortType}&page=${page}`
+        ).then((response) => response.json())
+            .then(data => {
+                console.log(data);
+                setProducts(data[0].products)
+                console.log(data[0].products);
+                setPerPage(perPage);
+                setTotal(data[0].products.length);
+                totalProducts = (data[0].products.length);
+
+                
+            });
+                
+        
         // setProducts(data.data.filter(category => category.category_id === 4) )
     }
 
     useEffect(() => {
-        const queryParams = new URLSearchParams(location.search);
-        const values = queryParams.get('address');
-        const arr = values.split(',');
-        const address = arr[arr.length - 1]; 
-        console.log(arr.length);
-        console.log(arr);
-        console.log(arr[arr.length - 1]);
+        address = location.pathname;
         fetchData(address, sort, limit, sortType, page);
     }, []);
     useEffect(() => {
         console.log('Location changed');
-        const queryParams = new URLSearchParams(location.search);
-        const values = queryParams.get('address');
+        address = location.pathname;
+        fetchData(address, sort, limit, sortType, page);
 
     }, [location]);
 
     const onChange = (page) => {
         console.log(page);
-        fetchData(sort, limit, sortType, page);
+        fetchData(address, sort, limit, sortType, page);
         handleClickScroll();
     };
 
@@ -68,34 +80,34 @@ const ProductCategory = () => {
             case 'new':
                 console.log('changeSort new');
                 setSort('new');
-                fetchData(sortModel, limit, sortType, 1);
+                fetchData(address, sortModel, limit, sortType, 1);
                 break;
             case 'view':
                 console.log('changeSort view');
                 setSort('view');
-                fetchData(sortModel, limit, sortType, 1);
+                fetchData(address, sortModel, limit, sortType, 1);
                 break;
             case 'popular':
                 console.log('changeSort popular');
                 setSort('view');
-                fetchData(sortModel, limit, sortType, 1);
+                fetchData(address, sortModel, limit, sortType, 1);
                 break;
             case 'sell_count':
                 console.log('changeSort sale');
                 setSort('sell_count');
-                fetchData(sortModel, limit, sortType, 1);
+                fetchData(address, sortModel, limit, sortType, 1);
                 break;
             case 'lowprice':
                 console.log('changeSort sale');
                 setSort('peice');
                 setSortType('asc');
-                fetchData(sortModel, limit, sortType, 1);
+                fetchData(address, sortModel, limit, sortType, 1);
                 break;
             case 'highprice':
                 console.log('changeSort sale');
                 setSort('peice');
                 setSortType('desc');
-                fetchData(sortModel, limit, sortType, 1);
+                fetchData(address, sortModel, limit, sortType, 1);
                 break;
 
         }
@@ -103,7 +115,7 @@ const ProductCategory = () => {
 
     const changeLimit = (limitCount) => {
         setLimit(limitCount);
-        fetchData(sort, limitCount, sortType, 1);
+        fetchData(address, sort, limitCount, sortType, 1);
     }
 
     return (
@@ -161,10 +173,10 @@ const ProductCategory = () => {
                                         </div>
                                     </div>
                                     <div id="products">
-                                        {products.count > 0 && (
+                                        {products.length > 0 && (
                                             <Row className='products items clearfix mode-1'>
 
-                                                {products.data.map(product => (
+                                                {products.map(product => (
                                                     <Col className='price_on'
                                                         xs={8} sm={8} md={8} lg={8} xl={6}
                                                         key={product.id}

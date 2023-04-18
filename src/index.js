@@ -23,7 +23,7 @@ root.render(
         <Route path="/orders" element={<Orders />} />
         <Route path="/profile" element={<Profile />} />
         <Route exact path="/cart" element={<Cart />} />
-        <Route path="/category" element={<ProductCategory/>} />
+        <Route path="/category/:slug" element={<ProductCategory/>} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Route>
