@@ -13,6 +13,7 @@ import deliveryFastImg from '../../Assets/img/delivery-fast.svg';
 import paymentImg from '../../Assets/img/payment.svg';
 import brand from '../../Assets/img/samsung.png';
 import FormItem from 'antd/es/form/FormItem';
+import ProductCommentItems from '../ProductCommentItems/ProductCommentItems';
 
 const { Option } = Select;
 const layout = {
@@ -23,7 +24,7 @@ const layout = {
         span: 16,
     },
 };
-
+const { TabPane } = Tabs;
 const Product = () => {
     const location = useLocation();
     const [product, setProduct] = useState();
@@ -32,7 +33,7 @@ const Product = () => {
     const [newPrice, setNewPrice] = useState();
     let address = '';
     let hasRelated = false;
-    let items = [];
+    let items ;
 
     const fetchData = async (address) => {
         const response = await fetch(
@@ -62,9 +63,7 @@ const Product = () => {
         fetchData(address);
     }, []);
 
-    const createTabs = (product) => {
-        
-    }
+
 
 
 
@@ -266,11 +265,10 @@ const Product = () => {
                                         </div>
                                     </div>
 
-
                                     <div className="body-bottom clearfix">
                                         <div className="section-bottom">
                                             <Tabs defaultActiveKey="1" className="nav " id="product-tabs">
-                                                <Tabs.Items tab="توضیحات" key="1" className="nav-item">
+                                                <TabPane tab="توضیحات" key="1" className="nav-item">
                                                     <Row>
                                                         <Col
                                                             xs={2}
@@ -291,8 +289,8 @@ const Product = () => {
                                                             sm={4}
                                                         ></Col>
                                                     </Row>
-                                                </Tabs.Items>
-                                                <Tabs.Items tab="مشخصات محصول" key="2" className="nav-item">
+                                                </TabPane>
+                                                <TabPane tab="مشخصات محصول" key="2" className="nav-item">
                                                     <Row>
                                                         <Col
                                                             xs={2}
@@ -341,8 +339,8 @@ const Product = () => {
                                                             sm={4}
                                                         ></Col>
                                                     </Row>
-                                                </Tabs.Items>
-                                                <Tabs.Items tab="نظرات" key="3" className="nav-item">
+                                                </TabPane>
+                                                <TabPane tab="نظرات" key="3" className="nav-item">
                                                     <Row>
                                                         <Col
                                                             xs={2}
@@ -363,7 +361,7 @@ const Product = () => {
                                                             </div>
 
                                                             <div className="clearfix" id="comment_area">
-                                                                <Form action="#" method="post" id="comment_form" className="form-horizontal  form-maker" novalidate="novalidate">
+                                                                <Form action="#" method="post" id="comment_form" className="form-horizontal  form-maker" noValidate>
                                                                     <Row>
                                                                         <Col lg={10} md={10} sm={10} xs={24}>
                                                                             <Form.Item label="نام و نام خانوادگی">
@@ -387,35 +385,7 @@ const Product = () => {
                                                                 </Form>
                                                             </div>
                                                             <ul id="comments">
-                                                                {product.comments.length > 0 ?
-                                                                    product.comments.map(comment => {
-                                                                        <li className="comment" id="comment_592659" key={comment.id}>
-                                                                            <div className="comments-box">
-                                                                                <div className="comment_title clearfix off">
-                                                                                    <div className="comment_name">
-                                                                                        <div className="comment_name_inner">
-                                                                                            <div className="comment_author">
-                                                                                                <span className="author-title">
-                                                                                                    {comment.name ? comment.name : 'علی قاسمی'}
-                                                                                                    <span className="author-status jhidden"> خریدار </span>
-                                                                                                </span>
-                                                                                                <a className="comment_date" href="#comment_592659" title="دوشنبه 28 فروردین 1402 - 22:51">
-                                                                                                    {comment.created_at}
-                                                                                                </a>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div className="comment_message clearfix">
-                                                                                    {comment.body}
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                    })
-                                                                    :
-                                                                    null
-                                                                     
-                                                                }
+                                                                <ProductCommentItems comments={product.comments} />
                                                             </ul>
                                                         </Col>
                                                         <Col
@@ -423,7 +393,7 @@ const Product = () => {
                                                             sm={4}
                                                         ></Col>
                                                     </Row>
-                                                </Tabs.Items>
+                                                </TabPane>
                                             </Tabs>
                                         </div>
                                     </div>
