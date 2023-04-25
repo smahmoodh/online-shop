@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 
 // Import Swiper React components
@@ -14,20 +14,9 @@ import "./ProductsSwiperList.css";
 
 import ProductItem from "../ProductItem/ProductItem";
 
-const ProductsSwiperList = () => {
+const ProductsSwiperList = ({products}) => {
 
-    const [products, setProducts] = useState([])
-
-    const fetchData = async () => {
-        const response = await fetch("https://json.xstack.ir/api/v1/products?limit=15")
-        const data = await response.json();
-        console.log(data);
-        setProducts(data.data)
-    }
-
-    useEffect(() => {
-        fetchData()
-    }, [])
+    console.log(products);
 
     return (
         <div className="swiper-products products">

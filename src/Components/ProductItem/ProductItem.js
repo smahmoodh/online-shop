@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { StarFilled } from '@ant-design/icons';
 import { seperatNumber, calcDiscount } from '../../Utils/utilities';
 import './ProductItem.css'
@@ -10,20 +11,20 @@ const ProductItem = (props) => {
 
     return (
         <>
-            <div className="thumb" data-id={props.product.id} data-title={props.product.title} data-price="1753.00" data-category="سایر لوازم جانبی ها">
+            <div className="thumb">
                 <ul className="badges">
                     <li className="badge-off"> </li>
                 </ul>
 
                 <div className="product-link">
-                    <a href={`/product/${props.product.id}`} title={props.product.name} target="_blank" tabIndex="0" dideo-checked="true">
-                        <img className="" src={props.product.thumb} data-src={props.product.thumb} alt={props.product.slug} width="400" height="300" />
+                    <Link to={`/product/${props.product.slug}`} title={props.product.name} className='product-box-img'>
+                        <img className="product-image" src={props.product.thumb} data-src={props.product.thumb} alt={props.product.slug} width="400" height="300" />
 
-                    </a>
+                    </Link>
                     <div className="details">
-                        <a className="title" href={`/product/${props.product.id}`} title={props.product.name} target="_blank" tabIndex="0" dideo-checked="true">
+                        <Link className="title" to={`/product/${props.product.slug}`} title={props.product.name}>
                             {props.product.name}
-                        </a>
+                        </Link>
                         <div className="details-price">
                             <div className="price-area">
                                 <span className="old-price">
@@ -32,7 +33,10 @@ const ProductItem = (props) => {
                                         <span className="amount-old-price">{seperatNumber(props.product.price * 1.8)}</span>
                                     </span>
                                 </span>
-                                <span className="price"><span className="price-amount">{seperatNumber(props.product.price)}</span><span className="currency">تومان</span></span>
+                                <span className="price">
+                                    <span className="price-amount">{seperatNumber(props.product.price)}</span>
+                                    <span className="currency">تومان</span>
+                                </span>
                             </div>
                             <div className="rate-section">
                                 <span className="reviewcount">(10)</span>

@@ -146,12 +146,14 @@ img {
     max-width: 100%;
     height: auto;
 }
+
 ul,
 li {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
+
 .container,
 .container-fluid,
 .container-lg,
@@ -165,6 +167,7 @@ li {
     margin-right: auto;
     margin-left: auto
 }
+
 .mode_desktop body {
     font-size: 16px;
 }
@@ -172,13 +175,24 @@ li {
 .mode_mobile body {
     font-size: 13px;
 }
+
 .mode_desktop body div[class^="ant-col"],
-.mode_desktop body div[class*=" ant-col"]{
-font-size: 16px;
+.mode_desktop body div[class*=" ant-col"] {
+    font-size: 16px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
 }
+
+.ant-row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
 .container-fluid {
     max-width: 1600px !important;
 }
+
 @media (min-width: 576px) {
 
     .container,
@@ -228,23 +242,29 @@ font-size: 16px;
         max-width: 1320px
     }
 }
+
 .clearfix::after {
     display: block;
     clear: both;
     content: "";
 }
-.layout, .layout>*:not(.header) {
+
+.layout,
+.layout>*:not(.header) {
     background-color: var(--primary);
 }
+
 .page_home .main-content {
     padding-top: 32px;
 }
+
 .breadcrumbs {
     padding: 16px 0;
     color: #2e343b;
     font-size: 12px;
     line-height: 18px;
 }
+
 form label {
     text-align: right;
 }
@@ -283,7 +303,19 @@ form label {
     outline: 0;
     box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25)
 }
+.ant-input::-moz-placeholder {
+    opacity: 1;
+}
 
+.ant-input::placeholder {
+    font-family: var(--font-family);
+    color: rgba(0, 0, 0, 0.25);
+    user-select: none;
+}
+
+.ant-input:placeholder-shown {
+    text-overflow: ellipsis;
+}
 .form-control::-webkit-input-placeholder {
     color: #6c757d;
     opacity: 1
@@ -339,14 +371,35 @@ select.form-control:focus::-ms-value {
     display: block;
     width: 100%
 }
+
 .form-control {
     color: #666;
 }
+
 input[type='text'],
 input[type='number'],
 textarea {
     font-size: 16px !important;
 }
+
 .float-left {
     float: left !important;
+}
+
+.box img,
+.widget img {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-area h2,
+.text-area .h2 {
+    font: bold 1.2em/3em var(--font-family), Arial;
+}
+
+.text-area p {
+    font: 1em/2em var(--font-family), Arial;
+    margin: 0 0 1.1em;
+    padding: 0;
+    text-align: justify;
 }

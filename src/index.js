@@ -9,7 +9,10 @@ import NotFound from './Pages/404';
 import Orders from './Pages/Client/Orders';
 import Profile from './Pages/Client/Profile';
 import Cart from './Pages/Client/Cart';
-import ProductCategory from './Components/ProductCategory/ProductCategory';
+// import ProductCategory from './Components/ProductCategory/ProductCategory';
+import ProductCategory from './Components/ProductCategoryWithSortFilter/ProductCategory';
+import Product from './Components/Product/Product';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -23,7 +26,8 @@ root.render(
         <Route path="/orders" element={<Orders />} />
         <Route path="/profile" element={<Profile />} />
         <Route exact path="/cart" element={<Cart />} />
-        <Route path="/category/:slug" element={<ProductCategory/>} />
+        <Route path="/category/:slug" element={<ProductCategory />} />
+        <Route path="/product/:slug" element={<Product />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Route>
