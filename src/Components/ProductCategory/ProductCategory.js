@@ -178,7 +178,7 @@ const ProductCategory = () => {
 
                                                 {products.map(product => (
                                                     <Col className='price_on'
-                                                        xs={8} sm={8} md={8} lg={8} xl={6}
+                                                        xs={24} sm={12} md={8} lg={8} xl={6}
                                                         key={product.id}
                                                     >
                                                         <ProductItem product={product} />
