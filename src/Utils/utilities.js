@@ -60,7 +60,7 @@ export function faToenNum(value) {
   return value;
 }
 export function calcDiscount(price, regularPrice, type) {
-  if (type == 1)
+  if (type === 1)
     return Math.round((calcDiscount(price, regularPrice) / regularPrice) * 100);
   else return regularPrice - price;
 }

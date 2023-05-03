@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
-import ProductDesktopView from './Des/ProductDesktopView';
-import ProductMobileView from './Mob/ProductMobileView';
+// import ProductDesktopView from './Des/ProductDesktopView';
+// import ProductMobileView from './Mob/ProductMobileView';
 
 import { useLocation } from 'react-router-dom';
 
 import './Product.css';
 
+const ProductDesktopView = React.lazy(() => import('./Des/ProductDesktopView'));
+const ProductMobileView = React.lazy(() => import('./Mob/ProductMobileView'));
 
 const Product = () => {
     const location = useLocation();
@@ -14,7 +16,6 @@ const Product = () => {
     const [relatedProducts, setRelatedProducts] = useState();
     let address = '';
     let hasRelated = false;
-
 
     const fetchData = async (address) => {
         const response = await fetch(
@@ -46,19 +47,22 @@ const Product = () => {
 
 
 
-
     if (product === undefined || relatedProducts === undefined) {
         console.log(product === undefined && relatedProducts === undefined);
         return <div>Loading ...</div>
     }
     return (
         <>
-            <BrowserView>
+            <React.Suspense fallback={<></>}>
+                {(isBrowser) && <ProductDesktopView product={product} relatedProducts={relatedProducts} />}
+                {(isMobile) && <ProductMobileView product={product} relatedProducts={relatedProducts} />}
+            </React.Suspense>
+            {/* <BrowserView>
                 <ProductDesktopView product={product} relatedProducts={relatedProducts} />
             </BrowserView>
             <MobileView>
                 <ProductMobileView product={product} relatedProducts={relatedProducts} />
-            </MobileView>
+            </MobileView> */}
         </>
     )
 }

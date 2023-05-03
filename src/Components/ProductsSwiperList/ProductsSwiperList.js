@@ -22,7 +22,7 @@ const ProductsSwiperList = ({products}) => {
         <div className="swiper-products products">
             {products.length > 0 && (
                 <Swiper
-                    slidesPerView={1}
+                    slidesPerView={1.5}
                     spaceBetween={5}
                     breakpoints={{
                         640: {

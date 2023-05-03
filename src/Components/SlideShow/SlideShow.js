@@ -68,31 +68,3 @@ const SlideShow = () => {
 }
 
 export default SlideShow;
-
-{/* <Splide aria-label="My Favorite Images"
-            className="full-page"
-            options={{
-                gap: '.5em',
-                padding: '5%',
-                type: 'loop',
-                autoplay: true,
-                direction: "rtl",
-                pauseOnHover: true,
-            }}
-            hasTrack={false}>
-            <SplideTrack>
-                <SplideSlide>
-                    <img src={slide1} alt="slide 1" />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={slide2} alt="slide 2" />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={slide3} alt="slide 3" />
-                </SplideSlide>
-                <SplideSlide>
-                    <img src={slide4} alt="slide 4" />
-                </SplideSlide>
-            </SplideTrack>
-            <div className="splide__arrows" />
-        </Splide> */}

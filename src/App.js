@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { Outlet } from "react-router-dom";
 import { Breadcrumb, Layout, Menu, theme, ConfigProvider } from 'antd';
 import { StyleProvider } from '@ant-design/cssinjs';
-import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
+import { BrowserView, MobileView, isBrowser, isMobile, isTablet } from 'react-device-detect';
 import HeaderComponent from './Components/HeaderComponent/HeaderComponent';
 import AuthContextProvider from './Context/Auth/authContext';
 import CartState from './Context/Cart/CartState';
@@ -17,6 +17,7 @@ function App() {
     const htmlTag = document.querySelector("html");
 
     if (isMobile) {
+      import('./Assets/css/main_mobile_mode.css');
       htmlTag.classList.add('mode_mobile');
       htmlTag.classList.remove('mode_desktop');
     }
@@ -29,17 +30,40 @@ function App() {
     <AuthContextProvider>
       <CartState>
         <ConfigProvider direction="rtl" >
-          <Layout className="layout">
-            <Header className="header">
-              <HeaderComponent />
-            </Header>
-            <Content className='container-fluid'>
-              <Outlet />
-            </Content>
-            <Footer className='footer'>
-              <FooterComponent />
-            </Footer>
-          </Layout>
+          {isBrowser || isTablet ?
+            <Layout className="layout">
+              <Header className="header">
+                <HeaderComponent />
+              </Header>
+              <Content className='page'>
+                <Outlet />
+              </Content>
+              <Footer className='footer'>
+                <FooterComponent />
+              </Footer>
+            </Layout>
+            : null}
+          {isMobile ?
+            <div className='mm-page mm-slideout'>
+              <Layout className="layout">
+                <Header className="header">
+                  <HeaderComponent />
+                </Header>
+                <Content className='page'>
+                  <div className='container'>
+                    <div className='wrapper clearfix'>
+                      <div className='main-content sides'>
+                        <Outlet />
+                      </div>
+                      <Footer className='footer'>
+                        <FooterComponent />
+                      </Footer>
+                    </div>
+                  </div>
+                </Content>
+              </Layout>
+            </div>
+            : null}
         </ConfigProvider>
       </CartState>
     </AuthContextProvider>

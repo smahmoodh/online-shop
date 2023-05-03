@@ -29,6 +29,7 @@
     --bs-danger: #dc3545;
     --bs-light: #f8f9fa;
     --bs-dark: #212529;
+    --white: #fff;
     --primary: #fafafa;
     --secondary: #ffffff;
     --accent: #0089ff;
@@ -167,15 +168,13 @@ li {
     margin-right: auto;
     margin-left: auto
 }
-
+.container-wide {
+    padding-right: 15px;
+    padding-left: 15px;
+}
 .mode_desktop body {
     font-size: 16px;
 }
-
-.mode_mobile body {
-    font-size: 13px;
-}
-
 .mode_desktop body div[class^="ant-col"],
 .mode_desktop body div[class*=" ant-col"] {
     font-size: 16px;
@@ -253,7 +252,9 @@ li {
 .layout>*:not(.header) {
     background-color: var(--primary);
 }
-
+.main-content {
+    background: #fafafa;
+}
 .page_home .main-content {
     padding-top: 32px;
 }
@@ -265,6 +266,14 @@ li {
     line-height: 18px;
 }
 
+.breadcrumbs a {
+    margin: 0;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 18px;
+    text-align: right;
+    color: #666;
+}
 form label {
     text-align: right;
 }
@@ -385,7 +394,11 @@ textarea {
 .float-left {
     float: left !important;
 }
-
+.box,
+.widget {
+    margin-bottom: 20px;
+    clear: both;
+}
 .box img,
 .widget img {
     max-width: 100%;
@@ -402,4 +415,7 @@ textarea {
     margin: 0 0 1.1em;
     padding: 0;
     text-align: justify;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, .05);
 }

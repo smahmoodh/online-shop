@@ -1,0 +1,24 @@
+.mode_mobile .container-wide {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.mode_mobile .container-wide>.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.mode_mobile .container-wide>.row>.widget-column {
+    padding-right: 0;
+    padding-left: 0;
+}
+.mode_mobile .page>.container {
+    padding: 0;
+}
+.mode_mobile .main-content {
+    margin-top: 124px;
+}
+.mode_mobile body {
+    font-size: 13px;
+    background: #fafafa;
+}
