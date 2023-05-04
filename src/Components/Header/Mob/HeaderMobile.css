@@ -1,0 +1,42 @@
+header {
+    width: 100%;
+    text-align: center;
+}
+.header-mobile {
+    background: #fff;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 1px 0 0 #e6e6e6;
+    border-top: 3px solid #0089ff;
+}
+.header-mobile .header-mobile-inner {
+    position: relative;
+}
+.header-mobile .header-mobile-inner-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 16px;
+}
+.header-mobile .toolbar .anticon{
+    position: relative;
+    font-size: 24px;
+}
+.mobile-logo img {
+    width: 110px;
+}
+.mode_mobile .basket-area {
+    padding-right: 0;
+    border-right: 0;
+    width: auto;
+    float: none;
+    position: unset;
+    cursor: pointer;
+    clear: both;
+}
+.header-mobile .search-area {
+    padding: 0 16px 16px;
+}

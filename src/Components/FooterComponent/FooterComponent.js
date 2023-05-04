@@ -58,7 +58,7 @@ const FooterComponent = () => {
             <div className='footer-center'>
                 <div className='container-fluid'>
                     <Row >
-                        <Col span={16}>
+                        <Col sm={16} xs={24}>
                             <MenuItems cssClass="menu-4" >
                                 <MenuItem cssClass="deep-2" link="" title="راهنمای خرید از سایت" text="راهنمای خرید از سایت">
                                     <MenuItems >

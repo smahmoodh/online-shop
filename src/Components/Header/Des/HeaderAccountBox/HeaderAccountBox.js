@@ -1,10 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { Dropdown, Layout, Menu, Space } from 'antd';
+import { Dropdown, Space } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
-import { AuthContext } from '../../Context/Auth/authContext';
+import { AuthContext } from '../../../../Context/Auth/authContext';
 import './HeaderAccountBox.css';
-const { Header } = Layout;
 
 const guestMenuItems = [
     {

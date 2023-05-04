@@ -44,7 +44,6 @@ function App() {
             </Layout>
             : null}
           {isMobile ?
-            <div className='mm-page mm-slideout'>
               <Layout className="layout">
                 <Header className="header">
                   <HeaderComponent />
@@ -62,7 +61,6 @@ function App() {
                   </div>
                 </Content>
               </Layout>
-            </div>
             : null}
         </ConfigProvider>
       </CartState>

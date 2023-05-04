@@ -1,15 +1,20 @@
 import React from "react";
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
 import { Logo } from '../Logo/logo';
-import SearchBox from "../HeaderSerachBox/searchBox";
-import './HeaderComponent.css';
-import HeaderAccountBox from "../HeaderAccountBox/HeaderAccountBox";
 import HeaderCartButton from "../HeaderCartButton/HeaderCartButton";
 import HeaderCategoryMenu from "../HeaderCategoryMenu/HeaderCategoryMenu";
+import HeaderAccountBox from "../Header/Des/HeaderAccountBox/HeaderAccountBox";
+import SearchBox from "../Header/HeaderSerachBox/SearchBox";
+import HeaderMobile from "../Header/Mob/HeaderMobile";
+
+import './HeaderComponent.css';
 
 const HeaderComponent = () => {
 
     return (
         <React.Fragment>
+            {isMobile ? <HeaderMobile /> :
+            <>
             <div className="header-top">
                 <div className="container-fluid">
                     <div className="header-top-inner">
@@ -36,21 +41,22 @@ const HeaderComponent = () => {
                     <div className="header-page-list">
                         <ul>
                             <li>
-                                <a href="https://janebi.com/search?status=1&amp;off=1&amp;special=1&amp;sort=sale" dideo-checked="true">پیشنهاد ویژه</a>
+                                <a href="#" dideo-checked="true">پیشنهاد ویژه</a>
                             </li>
                             <li>
-                                <a href="https://janebi.com/search?sort=sale" dideo-checked="true">پرفروش ترین</a>
+                                <a href="#" dideo-checked="true">پرفروش ترین</a>
                             </li>
                             <li>
-                                <a href="https://janebi.com/search" dideo-checked="true">جدیدترین ها</a>
+                                <a href="#" dideo-checked="true">جدیدترین ها</a>
                             </li>
                             <li>
-                                <a href="https://janebi.com/blog" dideo-checked="true">وبلاگ</a>
+                                <a href="#" dideo-checked="true">وبلاگ</a>
                             </li>
                         </ul>
                     </div>
                 </div>
-            </div>
+                </div>
+                </>}
         </React.Fragment>
     )
 }
