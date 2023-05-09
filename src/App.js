@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import { Breadcrumb, Layout, Menu, theme, ConfigProvider } from 'antd';
 import { StyleProvider } from '@ant-design/cssinjs';
 import { BrowserView, MobileView, isBrowser, isMobile, isTablet } from 'react-device-detect';
-import HeaderComponent from './Components/HeaderComponent/HeaderComponent';
+import HeaderComponent from './Components/Header/HeaderComponent';
 import AuthContextProvider from './Context/Auth/authContext';
 import CartState from './Context/Cart/CartState';
 import FooterComponent from './Components/FooterComponent/FooterComponent';
@@ -45,7 +45,7 @@ function App() {
             : null}
           {isMobile ?
               <Layout className="layout">
-                <Header className="header">
+              <Header className="header header-mobile">
                   <HeaderComponent />
                 </Header>
                 <Content className='page'>

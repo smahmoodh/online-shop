@@ -8,10 +8,10 @@ const onSearch = (value) => console.log(value);
 
 const SearchBox = () => {
     return (
-        <div class="search-area">
+        <div className="search-area">
             <Form method="get" action="/" className="search-form clearfix ">
                 <Space.Compact className="input-group" size="large">
-                    <Input defaultValue="دنبال چه لوازمی هستید؟" />
+                    <Input placeholder="دنبال چه لوازمی هستید؟" />
                     <span className="input-group-prepend">
                         <Button type="primary" className='search_button' danger onClick={onSearch}>
                             <SearchOutlined />

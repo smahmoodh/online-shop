@@ -1,0 +1,5 @@
+.cat-menu ul.ant-menu {
+    width: 100%;
+    text-align: right;
+    border-inline-end: none !important;
+}

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Dropdown, Space } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined, UserOutlined } from '@ant-design/icons';
 import { AuthContext } from '../../../../Context/Auth/authContext';
 import './HeaderAccountBox.css';
 
@@ -43,7 +43,7 @@ const registeredMenuItems = [
     }
 ];
 
-let items ;
+let items;
 
 const HeaderAccountBox = () => {
     const navigate = useNavigate();
@@ -63,35 +63,36 @@ const HeaderAccountBox = () => {
     useEffect(() => {
         if (auth) {
             authContext.dispatch({ type: 'login', payload: username });
-            items = [...registeredMenuItems ];
+            items = [...registeredMenuItems];
         } else {
             items = [...guestMenuItems];
             authContext.dispatch({ type: 'logout' });
         }
     }, []);
     return (
-        <div className="account-box">
-            {
-                auth ?
-                    <Dropdown menu={{ items }} trigger={['click']}>
-                        <a onClick={(e) => e.preventDefault()}>
-                            <Space>
-                                {username}
-                                <DownOutlined />
-                            </Space>
-                        </a>
-                    </Dropdown>
-                    :
-                    <Dropdown menu={{ items }} trigger={['click']}>
-                        <a onClick={(e) => e.preventDefault()}>
-                            <Space>
-                                ورود / ثبت نام
-                                <DownOutlined />
-                            </Space>
-                        </a>
-                    </Dropdown>
+        <div className="user-area">
+            <div className="user-toggle">
+                <UserOutlined />
+                <Dropdown className="user-menu shadow" menu={{ items }} trigger={['click']}>
+                    <div onClick={(e) => e.preventDefault()}>
+                        <Space>
+                            <div className="nickname-section">
+                                <div className="welcome">خوش آمدی!</div>
+                                <div className="nickname-title">
+                                    {
+                                        auth ?
+                                            `${username}`
+                                            :
+                                            'پروفایل'
 
-            }
+                                    }
+                                </div>
+                            </div>
+                        </Space>
+                    </div>
+                </Dropdown>
+            </div>
+
         </div>
     )
 }

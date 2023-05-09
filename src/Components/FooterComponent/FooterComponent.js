@@ -1,4 +1,5 @@
 import React from 'react';
+import { isDesktop, isMobile } from 'react-device-detect';
 import { Col, Row, Slider } from 'antd';
 import { LinkedinOutlined, TwitterOutlined, FacebookOutlined, SendOutlined, InstagramOutlined, PhoneOutlined, MailOutlined } from '@ant-design/icons';
 import MenuItems from '../MenuItems/MenuItems';
@@ -15,46 +16,48 @@ import anjomanImg from '../../Assets/img/anjoman.png';
 
 import './FooterComponent.css';
 
+
 const FooterComponent = () => {
     return (
         <>
-            <div className='footer-top'>
-                <div className='container-fluid'>
-                    <div className="service-box-list">
+            {isDesktop ?
+                <div className='footer-top'>
+                    <div className='container-fluid'>
+                        <div className="service-box-list">
 
-                        <ul>
-                            <li>
-                                <span>
-                                    <img src={guarantyImg} title=" ضمانت اصل بودن کالا" />
-                                    <span className="title"> ضمانت اصل بودن کالا</span>
-                                    <span className="subtitle">تضمین اصالت و گارانتی</span>
-                                </span>
-                            </li>
-                            <li>
-                                <span>
-                                    <img src={cartReturnImg} title="ضمانت بازگشت" />
-                                    <span className="title">ضمانت بازگشت</span>
-                                    <span className="subtitle">بازگرداندن کالا در ۷ روز</span>
-                                </span>
-                            </li>
-                            <li>
-                                <span>
-                                    <img src={deliveryFastImg} title="تحویل اکسپرس" />
-                                    <span className="title">تحویل اکسپرس</span>
-                                    <span className="subtitle">24 ساعته در اصفهان</span>
-                                </span>
-                            </li>
-                            <li>
-                                <span>
-                                    <img src={paymentImg} title="پرداخت در محل" />
-                                    <span className="title">پرداخت در محل</span>
-                                    <span className="subtitle">فقط در اصفهان</span>
-                                </span>
-                            </li>
-                        </ul>
+                            <ul>
+                                <li>
+                                    <span>
+                                        <img src={guarantyImg} title=" ضمانت اصل بودن کالا" />
+                                        <span className="title"> ضمانت اصل بودن کالا</span>
+                                        <span className="subtitle">تضمین اصالت و گارانتی</span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <img src={cartReturnImg} title="ضمانت بازگشت" />
+                                        <span className="title">ضمانت بازگشت</span>
+                                        <span className="subtitle">بازگرداندن کالا در ۷ روز</span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <img src={deliveryFastImg} title="تحویل اکسپرس" />
+                                        <span className="title">تحویل اکسپرس</span>
+                                        <span className="subtitle">24 ساعته در اصفهان</span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span>
+                                        <img src={paymentImg} title="پرداخت در محل" />
+                                        <span className="title">پرداخت در محل</span>
+                                        <span className="subtitle">فقط در اصفهان</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </div>
+                </div> : null}
             <div className='footer-center'>
                 <div className='container-fluid'>
                     <Row >

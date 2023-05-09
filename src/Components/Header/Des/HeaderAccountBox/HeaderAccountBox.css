@@ -1,5 +1,8 @@
-.account-box{
-    flex-grow: 1;
+.user-area {
+    width: auto;
+    float: left;
+    position: relative;
+    padding-left: 36px;
 }
 .account-box .ant-space-item {
     color: var(--bs-light)

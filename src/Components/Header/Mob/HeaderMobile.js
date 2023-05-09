@@ -1,27 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { Drawer } from 'antd';
 import { AlignRightOutlined } from '@ant-design/icons';
-import HeaderCartButton from '../../HeaderCartButton/HeaderCartButton';
+import HeaderCartButton from '../HeaderCartButton/HeaderCartButton';
 import { Logo } from '../../Logo/logo';
 import SearchBox from '../HeaderSerachBox/SearchBox';
 import './HeaderMobile.css';
+import HeaderSideMenu from './HeaderSideMenu/HeaderSideMenu';
 
 const HeaderMobile = () => {
+    const [open, setOpen] = useState(false);
+    const showDrawer = () => {
+        setOpen(true);
+    };
+    const onClose = () => {
+        setOpen(false);
+    };
     return (
         <>
-            <header className="header-mobile">
-                <div className="clearfix">
-                    <div className="header-mobile-inner">
-                        <div className="header-mobile-inner-top">
-                            <a href="#mm-menu" className="toolbar mm-menu-link " title="منو">
-                                <AlignRightOutlined />
-                            </a>
-                            <Logo cssClass="toolbar mobile-logo" />
-                            <HeaderCartButton />
+            <div className="clearfix">
+                <div className="header-mobile-inner">
+                    <div className="header-mobile-inner-top">
+                        <div className="toolbar" onClick={showDrawer}>
+                            <AlignRightOutlined />
                         </div>
-                        <SearchBox />
+                        <Logo cssClass="toolbar mobile-logo" />
+                        <HeaderCartButton />
                     </div>
+                    <SearchBox />
                 </div>
-            </header>
+                <HeaderSideMenu onClose={onClose} open={open} cssClass="side-menu" />
+            </div>
         </>
     )
 }

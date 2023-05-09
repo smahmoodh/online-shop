@@ -11,6 +11,8 @@ header {
     right: 0;
     box-shadow: 0 1px 0 0 #e6e6e6;
     border-top: 3px solid #0089ff;
+    height: auto;
+    padding: 0;
 }
 .header-mobile .header-mobile-inner {
     position: relative;
