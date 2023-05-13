@@ -4,7 +4,6 @@ import { CommentOutlined, CopyOutlined, HeartOutlined, LeftOutlined, MessageOutl
 import { Link } from 'react-router-dom';
 import { seperatNumber, calcDiscount } from '../../../Utils/utilities';
 import ProductsSwiperList from '../../ProductsSwiperList/ProductsSwiperList';
-import FormItem from 'antd/es/form/FormItem';
 
 import './ProductMobileView.css';
 import guarantyImg from '../../../Assets/img/guaranty.svg';
@@ -288,13 +287,13 @@ const ProductMobileView = ({ product, relatedProducts }) => {
                                 <span>امتیاز 3.41 از 5 توسط 8994 کاربر</span>
                             </div>
 
-                            <div class="content-section comments-section" id="comments-section">
+                            <div className="content-section comments-section" id="comments-section">
                                 <div className='comments-header'>
                                     <span>
                                         <CommentOutlined />
                                         نظرات کاربران
                                     </span>
-                                    <span class="more-btn-open more-btn">
+                                    <span className="more-btn-open more-btn">
                                         <MessageOutlined />
                                         افزودن دیدگاه
                                     </span>
@@ -304,7 +303,7 @@ const ProductMobileView = ({ product, relatedProducts }) => {
                                         <div id="comment_title">
                                             دیدگاه ها
                                         </div>
-                                        <div class="clearfix" id="comment_area">
+                                        <div className="clearfix" id="comment_area">
                                             <Form action="#" method="post" id="comment_form" className="form-horizontal  form-maker" noValidate>
                                                 <Row>
                                                     <Col lg={10} md={10} sm={10} xs={24}>

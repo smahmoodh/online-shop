@@ -1,0 +1,77 @@
+.mode_mobile #box_products .filter_items {
+    direction: ltr;
+    font-size: 0;
+    border-bottom: 0;
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.mode_mobile #box_products .filter_items .filter-title .ant-space,
+.mode_mobile #box_products .filter_items .filter-number .ant-space,
+.mode_mobile #box_products .filter_items .filter-title .ant-space-item,
+.mode_mobile #box_products .filter_items .filter-number .ant-space-item,
+.mode_mobile #box_products .filter_items .filter-title .ant-select,
+.mode_mobile #box_products .filter_items .filter-number .ant-select {
+    width: 100%;
+}
+.mode_mobile #box_products .filter_items .filter-title {
+    direction: rtl;
+    flex-grow: 1;
+    margin-right: 10px;
+}
+.mode_mobile #box_products .filter_items .filter-number {
+    direction: rtl;
+    margin-right: 10px;
+    display: block;
+    flex-grow: 1;
+}
+.mode_mobile #box_products .filter_items .btn-filter {
+    padding: 0;
+    height: 40px;
+    width: 40px;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+}
+.mode_mobile #box_products .filter_items .btn-filter span {
+    font-size: 25px;
+    line-height: 36px;
+    margin-top: 5px;
+}
+.mode_mobile #box_products .filter_items .ant-select-selector,
+.mode_mobile #box_products .filter_items .btn-filter {
+    font-size: 12px;
+    color: #696969;
+    border-radius: 4px;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, .05);
+    border: solid 1px #d9d9d9;
+    background-color: var(--white);
+    height: 38px;
+}
+
+.ant-select-selector .ant-select-selection-search-input {
+    height: 100%!important;
+}
+.ant-select-single .ant-select-selector .ant-select-selection-item,
+.ant-select-single .ant-select-selector .ant-select-selection-placeholder {
+    line-height: 37px;
+}
+
+.mode_mobile #box_products .products.mode-1>div {
+    width: 100%;
+}
+.mode_mobile #box_products .pageslist {
+    padding: 14px 16px 13px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15);
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+}
+
+.ant-pagination-item-active > a{
+    border-radius: 4px;
+        box-shadow: 0 3px 5px 0 rgba(0, 137, 255, .32);
+        background-color: #0089ff;
+        color: #fff!important;
+}

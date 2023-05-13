@@ -46,7 +46,7 @@ const ProductsSwiperList = ({products}) => {
                     {products.map(product => (
                         <SwiperSlide key={product.id}>
                             <div className="product-slide price_on" style={{ width: "100%", display: "inline-block" }}>
-                                <ProductItem product={product} />
+                                <ProductItem product={product} slider={true} />
                             </div>
                         </SwiperSlide>
                     ))}

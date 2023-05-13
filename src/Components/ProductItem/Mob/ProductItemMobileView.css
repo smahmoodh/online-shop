@@ -1,0 +1,126 @@
+.thumb {
+    margin: 0 0 8px!important;
+    padding: 16px!important;
+    text-align: right!important;
+    border-radius: 4px!important;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .15)!important;
+    border: 0!important;
+    transition: all .3s!important;
+    background: #fff!important;
+}
+
+.thumb .badges {
+    position: unset;
+    margin-bottom: 8px;
+}
+.thumb .badges li {
+    color: #fff;
+}
+.thumb .badges li.badge-special {
+    background-position: right;
+    padding: 3px 6px;
+    background-image: url(../../../Assets/img/badg.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.thumb .badges li.badge-special:after {
+    content: "پیشنهاد ویژه";
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 12px;
+    text-align: center;
+}
+.thumb .product-link {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.thumb .product-link a.image-product {
+    flex-basis: 70%;
+    width: 50%;
+}
+.thumb .product-link .h2 {
+    font-size: 14px;
+    margin: 0;
+    flex-basis: 68%;
+    margin-right: 12px;
+    font-weight: normal;
+}
+.thumb .details-price {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 55px;
+    margin-top: 10px;
+}
+.thumb .rate-section {
+    padding: 3px 0 0;
+}
+.thumb .rate-section i {
+    position: relative;
+    top: 2px;
+    color: #f1c21b;
+}
+.thumb .rate-section .star-rate {
+    font-size: 12px;
+    line-height: 12px;
+    color: #2e343b;
+}
+.thumb .rate-section .reviewcount {
+    font-size: 12px;
+    line-height: 12px;
+    color: #666;
+}
+.thumb .details-price .price-area .old-price {
+    display: block;
+    text-decoration: none;
+    margin: 0;
+}
+.thumb .details-price .price-area .old-price .old-price-inner .off-percent {
+    width: 35px;
+    height: 20px;
+    margin: 0 0 0 6px;
+    border-radius: 4px;
+    background-color: rgba(0, 137, 255, .1);
+    font-size: 13px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 17px;
+    letter-spacing: normal;
+    text-align: center;
+    color: #0089ff;
+    display: inline-block;
+    padding-top: 3px;
+}
+.thumb .details-price .price-area .old-price .old-price-inner .amount-old-price {
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 17px;
+    letter-spacing: normal;
+    text-align: right;
+    color: #696969;
+    text-decoration: line-through;
+}
+.thumb .details-price .price-area .price span {
+    display: inline-block;
+}
+.thumb .details-price .price-area .price .price-amount {
+    margin: 5px 0 0 4px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+    text-align: right;
+    color: #2e343b;
+}
+.thumb .details-price .price-area .price .currency {
+    margin: 4px 4px 3px 0;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 17px;
+    letter-spacing: normal;
+    text-align: right;
+    color: #2e343b;
+}

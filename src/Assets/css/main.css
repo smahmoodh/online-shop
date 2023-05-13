@@ -265,7 +265,10 @@ li {
     font-size: 12px;
     line-height: 18px;
 }
-
+.mode_mobile .breadcrumbs {
+    padding: 12px 15px;
+    margin-bottom: 0;
+}
 .breadcrumbs a {
     margin: 0;
     font-size: 12px;
@@ -273,6 +276,35 @@ li {
     line-height: 18px;
     text-align: right;
     color: #666;
+}
+.mode_mobile .breadcrumbs .breadcrumb li {
+    display: inline-block;
+    align-items: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    list-style-type: unset;
+}
+.mode_mobile .breadcrumbs .ant-breadcrumb ol {
+    max-width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow-x: scroll;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    margin-bottom: 0;
+    background: transparent;
+    padding: 12px 5px;
+}
+
+.mode_mobile .breadcrumbs .ant-breadcrumb li {
+    display: inline-block;
+    align-items: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    list-style-type: unset;
 }
 form label {
     text-align: right;
@@ -418,4 +450,8 @@ textarea {
 }
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: rgba(0, 0, 0, .05);
+}
+iframe{
+    display: none!important;
+
 }

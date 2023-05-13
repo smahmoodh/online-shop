@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
-// import ProductDesktopView from './Des/ProductDesktopView';
-// import ProductMobileView from './Mob/ProductMobileView';
-
+import { isBrowser, isMobile } from 'react-device-detect';
 import { useLocation } from 'react-router-dom';
 
 import './Product.css';
@@ -20,23 +17,22 @@ const Product = () => {
     const fetchData = async (address) => {
         const response = await fetch(
             `https://json.xstack.ir/api/v1${address}`
-        ).then((response) => response.json())
-            .then(data => {
-                console.log(data);
-                setProduct(data);
-                fetchRelatedProducts(data.category.slug);
-            });
+        );
+        const data = await response.json();
+        console.log(data);
+        setProduct(data);
+        fetchRelatedProducts(data.category.slug);
     }
     const fetchRelatedProducts = async (address) => {
         const response = await fetch(
             `https://json.xstack.ir/api/v1/category/${address}?limit=15`
-        ).then((response) => response.json())
-            .then(data => {
-                console.log(data);
-                if (data[0].products.length)
-                    hasRelated = true;
-                setRelatedProducts(data[0].products);
-            });
+        );
+        const data = await response.json();
+        console.log(data);
+        if (data[0].products.length)
+            hasRelated = true;
+        setRelatedProducts(data[0].products);
+
     }
     useEffect(() => {
         address = location.pathname;

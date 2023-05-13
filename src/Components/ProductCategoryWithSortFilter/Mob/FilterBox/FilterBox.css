@@ -1,0 +1,88 @@
+.filter_form .ant-drawer-body {
+    background: #fafafa;
+    overflow-y: scroll;
+    padding: 0 0 15px;
+}
+
+.filter_form form#filter_products {
+    border-radius: 4px;
+    border: solid 1px #e6e6e6;
+    margin: 15px 20px 70px;
+    background: #fff;
+}
+
+.filter_form form#filter_products .values-box {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+#filter_products .values-box span.swap-icon {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e9ecef;
+    height: 35px;
+}
+
+#filter_products .values-box input {
+    width: 145px;
+}
+
+#filter_products .filter-box {
+    padding: 15px;
+    border-bottom: solid 1px #e6e6e6;
+}
+
+#filter_products .filter-box .toggle-slide-area {
+    width: 70px;
+    display: block;
+    margin: 0 1px;
+    clear: both;
+    margin-left: 10px !important;
+    float: right;
+}
+
+.filter_form form#filter_products .filter-box .toggle-slide-area label.inline {
+    float: right;
+    margin: 0;
+    line-height: 22px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.filter_form .area-filter-btn {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: auto;
+    background: #fff;
+    z-index: 99;
+    padding: 10px;
+    box-shadow: 0 -1px 0 0 #e6e6e6;
+}
+
+.filter_form .area-filter-btn a.btn-filter {
+    display: block;
+    border: 0;
+    background: #0089ff;
+    color: #fff;
+    font-size: 14px;
+    line-height: 50px;
+    height: 48px;
+    width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    text-align: center;
+}
+
+.filter_form .area-filter-btn a.btn-filter span.anticon {
+    margin-left: 5px;
+    font-size: 16px;
+}

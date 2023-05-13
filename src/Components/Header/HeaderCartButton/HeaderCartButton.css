@@ -35,7 +35,7 @@
     background: #fff;
 }
 .basket-area .basket-menu {
-    /* display: none; */
+    display: none;
     position: absolute;
     z-index: 101;
     left: 0;
@@ -55,12 +55,12 @@
     top: 100%;
     right: 0;
     left: 0;
-    top: 118px;
+    top: 154px;
     border-radius: 0;
     width: 100%;
 }
 .basket-area .basket-menu.active{
-    /* display: block; */
+    display: block;
     opacity: 1;
     height: auto;
 }

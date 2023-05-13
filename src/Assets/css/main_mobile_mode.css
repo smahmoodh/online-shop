@@ -1,3 +1,11 @@
+body{
+    color: #2d3436;
+}
+h1,
+.h1 {
+    font: bold 1.2em/1.4em var(--font-family),
+        var(--bs-font-sans-serif);
+}
 .mode_mobile .container-wide {
     padding-right: 0;
     padding-left: 0;
@@ -16,9 +24,30 @@
     padding: 0;
 }
 .mode_mobile .main-content {
-    margin-top: 124px;
+    margin-top: 157px;
 }
 .mode_mobile body {
     font-size: 13px;
     background: #fafafa;
+}
+.mode_mobile #box_products .content {
+    padding: 15px;
+}
+.mode_mobile #box_products .content .header {
+    margin-bottom: 15px;
+}
+.content .header .title,
+.widget .header .title {
+    width: auto;
+    float: right;
+}
+.content .body,
+.widget .body {
+    text-align: justify;
+}
+.mode_mobile .content {
+    padding: 0 15px;
+}
+.mode_mobile .content{
+
 }

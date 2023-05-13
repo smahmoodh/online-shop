@@ -1,0 +1,205 @@
+.sides #side_top,
+.sides #side_bottom {
+    clear: both;
+}
+
+.header-box {
+    background: #fff;
+    padding: 10px 30px;
+}
+
+.header-box .header {
+    padding: 32px 0 0;
+}
+
+.header-box .header h1 {
+    height: 26px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 26px;
+    text-align: right;
+    color: #2e343b;
+    position: relative;
+    top: -3px;
+}
+
+.mode_desktop .header-box .header h1:before {
+    content: "";
+    background-image: url("../../../Assets/img/description-title.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    padding: 0 10px;
+    margin-left: 16px;
+}
+
+.mode_mobile .header-box .header h1 {
+    background-image: url("../../../Assets/img/description-title.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: auto;
+    padding-right: 30px;
+    margin-left: 16px;
+}
+
+.header-box .body {
+    padding: 32px 0 0;
+}
+
+.filter_items {
+    display: flex !important;
+}
+
+#box_products .filter_items {
+    margin-bottom: 15px;
+    border-bottom: solid 1px #e6e6e6;
+}
+
+#box_products .filter_items .filter-title {
+    flex-grow: 2;
+}
+
+#box_products .filter_items .btn-sorts {
+    padding: 0;
+    position: relative;
+    padding-right: 100px;
+}
+
+#box_products .filter_items .btn-sorts:before {
+    content: "مرتب سازی :";
+    position: absolute;
+    font-size: 13px;
+    line-height: 17px;
+    color: #939393;
+    right: 25px;
+    top: 3px;
+    font-family: var(--font-family), var(--bs-font-sans-serif);
+}
+
+#box_products .filter_items .btn-sorts a {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 19px;
+    text-align: right;
+    color: #2e343b;
+    margin: 0 5px;
+    padding: 0 0 15px;
+    border-bottom: 3px solid transparent;
+    display: inline-block;
+}
+
+#box_products .filter_items .btn-sorts a:first-child {
+    margin-right: 0;
+}
+
+#box_products .filter_items .btn-sorts a.btn-default {
+    color: #0089ff;
+    line-height: 21px;
+    font-size: 13px;
+    border-bottom-color: #0089ff;
+}
+
+#box_products .filter_items .btn-sorts button {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 19px;
+    text-align: right;
+    color: #2e343b;
+    margin: 0 5px;
+    padding: 0 0 15px;
+    border-bottom: 3px solid transparent;
+    display: inline-block;
+    border-radius: 0;
+}
+
+#box_products .filter_items .btn-sorts button:first-child {
+    margin-right: 0;
+}
+
+#box_products .filter_items .btn-sorts button.btn-default {
+    color: #0089ff;
+    font-size: 13px;
+    border-bottom-color: #0089ff;
+}
+
+#box_products .filter_items .filter-number {
+    display: block;
+    flex-grow: 1;
+}
+
+#box_products .filter_items .filter-number .ant-space-item {
+    display: inline-block;
+}
+
+#box_products .filter_items .filter-number .ant-space-item button {
+    padding: 0.25rem 0.5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+
+#box_products .filter_items .filter-number .ant-space-item button.btn-default {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+#box_products .content.header-box {
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+#box_products .products.mode-1>div.ant-col.price_on {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#box_products .products.mode-1>div .thumb {
+    margin: 8px -8px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.products.mode-1>div .thumb .product-link {
+    display: block;
+}
+
+.pageslist {
+    padding: 0;
+    clear: both;
+    text-align: center;
+    margin: 24px 0;
+}
+
+.pageslist .ant-pagination-options {
+    display: none;
+}
+
+li.ant-pagination-item.ant-pagination-item-active {
+    border-radius: 4px;
+    box-shadow: 0 3px 5px 0 rgba(0, 137, 255, 0.32);
+    background-color: #0089ff;
+    color: #fff;
+}
+
+li.ant-pagination-item.ant-pagination-item-active a {
+    color: #fff
+}
+
+.ant-pagination .ant-pagination-item:not(.ant-pagination-item-active):hover,
+.ant-pagination .ant-pagination-next:not(.ant-pagination-disabled):hover,
+.ant-pagination .ant-pagination-prev:not(.ant-pagination-disabled):hover {
+    border-radius: 4px;
+    box-shadow: 0 3px 5px 0 rgba(0, 137, 255, 0.32);
+    background-color: #0089ff;
+}
+
+.ant-pagination .ant-pagination-item:not(.ant-pagination-item-active):hover a,
+.ant-pagination .ant-pagination-next:not(.ant-pagination-disabled):hover a,
+.ant-pagination .ant-pagination-next:not(.ant-pagination-disabled):hover button,
+.ant-pagination .ant-pagination-prev:not(.ant-pagination-disabled):hover a,
+.ant-pagination .ant-pagination-prev:not(.ant-pagination-disabled):hover button {
+    color: #fff
+}
