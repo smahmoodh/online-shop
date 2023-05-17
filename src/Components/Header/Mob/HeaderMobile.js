@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import { Drawer } from 'antd';
 import { AlignRightOutlined } from '@ant-design/icons';
-import HeaderCartButton from '../HeaderCartButton/HeaderCartButton';
 import { Logo } from '../../Logo/logo';
+import HeaderCartButton from '../HeaderCartButton/HeaderCartButton';
 import SearchBox from '../HeaderSerachBox/SearchBox';
-import './HeaderMobile.css';
 import HeaderSideMenu from './HeaderSideMenu/HeaderSideMenu';
+import AccountMobileDrawer from '../../AccountMobileDrawer/AccountMobileDrawer';
+
+import './HeaderMobile.css';
 
 const HeaderMobile = () => {
     const [open, setOpen] = useState(false);
@@ -14,6 +16,15 @@ const HeaderMobile = () => {
     };
     const onClose = () => {
         setOpen(false);
+    };
+    const [openAccountDrawer, setOpenAccountDrawer] = useState(false);
+    const showAccountDrawer = () => {
+        console.log("showAccountDrawer");
+        onClose();
+        setOpenAccountDrawer(true);
+    };
+    const onCloseAccountDrawer = () => {
+        setOpenAccountDrawer(false);
     };
     return (
         <>
@@ -28,7 +39,8 @@ const HeaderMobile = () => {
                     </div>
                     <SearchBox />
                 </div>
-                <HeaderSideMenu onClose={onClose} open={open} cssClass="side-menu" />
+                <HeaderSideMenu onClose={onClose} open={open} cssClass="side-menu" showAccountDrawer={showAccountDrawer} />
+                <AccountMobileDrawer cssClass={'account-drawer'} onClose={onCloseAccountDrawer} open={openAccountDrawer} />
             </div>
         </>
     )

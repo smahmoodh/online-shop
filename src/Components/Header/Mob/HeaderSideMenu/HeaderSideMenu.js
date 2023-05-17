@@ -6,7 +6,7 @@ import HeaderCategoryMenu from '../HeaderCategoryMenu/HeaderCategoryMenu'
 
 import './HeaderSideMenu.css'
 
-const HeaderSideMenu = ({ onClose, open, cssClass }) => {
+const HeaderSideMenu = ({ onClose, open, cssClass, showAccountDrawer }) => {
 
     let username = '';
     let auth = false;
@@ -22,7 +22,7 @@ const HeaderSideMenu = ({ onClose, open, cssClass }) => {
             <Logo cssclassName="" />
             <div className='drawer-item'>
                 <div className='drawer-item-inner user-area'>
-                    <a className="user-toggle user_box" href="#mobile_user_box">
+                    <div className="user-toggle user_box" onClick={showAccountDrawer}>
                         <i className="fal fa-user"></i>
                         <div className="nickname-section">
                             <div className="welcome">خوش آمدی!</div>
@@ -30,7 +30,7 @@ const HeaderSideMenu = ({ onClose, open, cssClass }) => {
                                 {auth ? { username } : 'پروفایل'}
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
             <div className='drawer-item'>

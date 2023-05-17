@@ -8,6 +8,7 @@ import AuthContextProvider from './Context/Auth/authContext';
 import CartState from './Context/Cart/CartState';
 import FooterComponent from './Components/FooterComponent/FooterComponent';
 import './Assets/css/main.css';
+import AccountMobileDrawer from './Components/AccountMobileDrawer/AccountMobileDrawer';
 const { Header, Content, Footer } = Layout;
 
 
@@ -44,23 +45,23 @@ function App() {
             </Layout>
             : null}
           {isMobile ?
-              <Layout className="layout">
+            <Layout className="layout">
               <Header className="header header-mobile">
-                  <HeaderComponent />
-                </Header>
-                <Content className='page'>
-                  <div className='container'>
-                    <div className='wrapper clearfix'>
-                      <div className='main-content sides'>
-                        <Outlet />
-                      </div>
-                      <Footer className='footer'>
-                        <FooterComponent />
-                      </Footer>
+                <HeaderComponent />
+              </Header>
+              <Content className='page'>
+                <div className='container'>
+                  <div className='wrapper clearfix'>
+                    <div className='main-content sides'>
+                      <Outlet />
                     </div>
+                    <Footer className='footer'>
+                      <FooterComponent />
+                    </Footer>
                   </div>
-                </Content>
-              </Layout>
+                </div>
+              </Content>
+            </Layout>
             : null}
         </ConfigProvider>
       </CartState>

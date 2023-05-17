@@ -1,21 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Menu } from 'antd';
-import { DownOutlined, LeftOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 
 import './HeaderCategoryMenu.css';
 
 const HeaderCategoryMenu = ({onClose}) => {
 
-    const [categories, setCategories] = useState([]);
-    // const [items, setItems] = useState([]);
-    const [tmpcategories, settmpCategories] = useState([]);
 
     const fetchData = async () => {
         const response = await fetch("https://json.xstack.ir/api/v1/categories");
         const data = await response.json();
         console.log(data);
-        makeCategoryTree(data.data);
+        // makeCategoryTree(data.data);
     }
 
     useEffect(() => {

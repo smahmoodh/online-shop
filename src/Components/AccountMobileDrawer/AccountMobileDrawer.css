@@ -1,0 +1,29 @@
+.account-drawer .ant-drawer-body {
+    padding: 0;
+}
+
+.account-drawer ul {
+    padding: 0 16px 15px;
+}
+
+.account-drawer ul li {
+    text-align: right;
+}
+
+.account-drawer ul li a {
+    padding: 15px 0;
+    color: #2e343b;
+    font-size: 14px;
+    border: 0;
+    display: flex;
+    align-items: center;
+}
+
+.account-drawer ul li a span {
+    margin-left: 16px;
+    font-size: 24px;
+    color: #939393;
+}
+.account-drawer ul li a.exit-userbox {
+    border-bottom: solid 1px #e6e6e6;
+}
