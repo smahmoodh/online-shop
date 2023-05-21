@@ -168,13 +168,16 @@ li {
     margin-right: auto;
     margin-left: auto
 }
+
 .container-wide {
     padding-right: 15px;
     padding-left: 15px;
 }
+
 .mode_desktop body {
     font-size: 16px;
 }
+
 .mode_desktop body div[class^="ant-col"],
 .mode_desktop body div[class*=" ant-col"] {
     font-size: 16px;
@@ -248,13 +251,221 @@ li {
     content: "";
 }
 
+.clearfix::after {
+    display: block;
+    clear: both;
+    content: ""
+}
+
+.d-none {
+    display: none !important
+}
+
+.d-inline {
+    display: inline !important
+}
+
+.d-inline-block {
+    display: inline-block !important
+}
+
+.d-block {
+    display: block !important
+}
+
+.d-table {
+    display: table !important
+}
+
+.d-table-row {
+    display: table-row !important
+}
+
+.d-table-cell {
+    display: table-cell !important
+}
+
+.d-flex {
+    display: -ms-flexbox !important;
+    display: flex !important
+}
+
+.d-inline-flex {
+    display: -ms-inline-flexbox !important;
+    display: inline-flex !important
+}
+
+.text-justify {
+    text-align: justify !important
+}
+
+.text-wrap {
+    white-space: normal !important
+}
+
+.text-nowrap {
+    white-space: nowrap !important
+}
+
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.text-left {
+    text-align: left !important
+}
+
+.text-right {
+    text-align: right !important
+}
+
+.text-center {
+    text-align: center !important
+}
+
+.float-left {
+    float: left !important
+}
+
+.float-right {
+    float: right !important
+}
+
+.float-none {
+    float: none !important
+}
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem
+}
+
+.alert-primary {
+    color: #004085;
+    background-color: #cce5ff;
+    border-color: #b8daff
+}
+
+.alert-primary hr {
+    border-top-color: #9fcdff
+}
+
+.alert-primary .alert-link {
+    color: #002752
+}
+
+.alert-secondary {
+    color: #383d41;
+    background-color: #e2e3e5;
+    border-color: #d6d8db
+}
+
+.alert-secondary hr {
+    border-top-color: #c8cbcf
+}
+
+.alert-secondary .alert-link {
+    color: #202326
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb
+}
+
+.alert-success hr {
+    border-top-color: #b1dfbb
+}
+
+.alert-success .alert-link {
+    color: #0b2e13
+}
+
+.alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb
+}
+
+.alert-info hr {
+    border-top-color: #abdde5
+}
+
+.alert-info .alert-link {
+    color: #062c33
+}
+
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba
+}
+
+.alert-warning hr {
+    border-top-color: #ffe8a1
+}
+
+.alert-warning .alert-link {
+    color: #533f03
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb
+}
+
+.alert-danger hr {
+    border-top-color: #f1b0b7
+}
+
+.alert-danger .alert-link {
+    color: #491217
+}
+
+.alert-light {
+    color: #818182;
+    background-color: #fefefe;
+    border-color: #fdfdfe
+}
+
+.alert-light hr {
+    border-top-color: #ececf6
+}
+
+.alert-light .alert-link {
+    color: #686868
+}
+
+.alert-dark {
+    color: #1b1e21;
+    background-color: #d6d8d9;
+    border-color: #c6c8ca
+}
+
+.alert-dark hr {
+    border-top-color: #b9bbbe
+}
+
+.alert-dark .alert-link {
+    color: #040505
+}
+
 .layout,
 .layout>*:not(.header) {
     background-color: var(--primary);
 }
+
 .main-content {
     background: #fafafa;
 }
+
 .page_home .main-content {
     padding-top: 32px;
 }
@@ -265,10 +476,12 @@ li {
     font-size: 12px;
     line-height: 18px;
 }
+
 .mode_mobile .breadcrumbs {
     padding: 12px 15px;
     margin-bottom: 0;
 }
+
 .breadcrumbs a {
     margin: 0;
     font-size: 12px;
@@ -277,6 +490,7 @@ li {
     text-align: right;
     color: #666;
 }
+
 .mode_mobile .breadcrumbs .breadcrumb li {
     display: inline-block;
     align-items: center;
@@ -284,6 +498,7 @@ li {
     vertical-align: middle;
     list-style-type: unset;
 }
+
 .mode_mobile .breadcrumbs .ant-breadcrumb ol {
     max-width: 100%;
     display: -webkit-box;
@@ -306,6 +521,7 @@ li {
     vertical-align: middle;
     list-style-type: unset;
 }
+
 form label {
     text-align: right;
 }
@@ -344,6 +560,7 @@ form label {
     outline: 0;
     box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25)
 }
+
 .ant-input::-moz-placeholder {
     opacity: 1;
 }
@@ -357,6 +574,7 @@ form label {
 .ant-input:placeholder-shown {
     text-overflow: ellipsis;
 }
+
 .form-control::-webkit-input-placeholder {
     color: #6c757d;
     opacity: 1
@@ -426,11 +644,13 @@ textarea {
 .float-left {
     float: left !important;
 }
+
 .box,
 .widget {
     margin-bottom: 20px;
     clear: both;
 }
+
 .box img,
 .widget img {
     max-width: 100%;
@@ -448,10 +668,12 @@ textarea {
     padding: 0;
     text-align: justify;
 }
+
 .table-striped tbody tr:nth-of-type(odd) {
     background-color: rgba(0, 0, 0, .05);
 }
-iframe{
-    display: none!important;
+
+iframe {
+    display: none !important;
 
 }

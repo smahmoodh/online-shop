@@ -12,9 +12,9 @@ export function copyToClipboard(inputId) {
   console.log(navigator.clipboard.readText());
 }
 
-export function seperatNumber(value){
-    value = value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
-    return value;
+export function seperatNumber(value) {
+  value = value.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+  return value;
 }
 export function enTofa(value) {
   if (!value) {
@@ -72,3 +72,21 @@ export const handleClickScroll = () => {
     element.scrollIntoView({ behavior: 'smooth' });
   }
 };
+
+export const validate = (username, password) => {
+  let result = true, errorMsg = '';
+  if (username === '') {
+    errorMsg = 'Username Empty';
+    result = false;
+  } else if (!(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(username))) {
+    errorMsg = 'Username Incorrect';
+    result = false;
+  } else if (password === '') {
+    errorMsg ='Password Empty';
+    result = false;
+  } else if (password.length < 6) {
+    errorMsg ='Password Is Short';
+    result = false;
+  }
+  return {result, errorMsg};
+}

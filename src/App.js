@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react';
 import { Outlet } from "react-router-dom";
-import { Breadcrumb, Layout, Menu, theme, ConfigProvider } from 'antd';
-import { StyleProvider } from '@ant-design/cssinjs';
-import { BrowserView, MobileView, isBrowser, isMobile, isTablet } from 'react-device-detect';
+import { Layout, ConfigProvider } from 'antd';
+import { isBrowser, isMobile, isTablet } from 'react-device-detect';
 import HeaderComponent from './Components/Header/HeaderComponent';
 import AuthContextProvider from './Context/Auth/authContext';
 import CartState from './Context/Cart/CartState';
 import FooterComponent from './Components/FooterComponent/FooterComponent';
+
 import './Assets/css/main.css';
-import AccountMobileDrawer from './Components/AccountMobileDrawer/AccountMobileDrawer';
+
 const { Header, Content, Footer } = Layout;
 
 
 
 function App() {
+  
   useEffect(() => {
     const htmlTag = document.querySelector("html");
 

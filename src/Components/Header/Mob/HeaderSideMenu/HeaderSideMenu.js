@@ -1,6 +1,7 @@
-import React from 'react'
+import React,{useEffect, useContext, useState} from 'react'
 import { Link } from 'react-router-dom'
 import { Drawer } from 'antd'
+import { AuthContext } from '../../../../Context/Auth/authContext'
 import { Logo } from '../../../Logo/logo'
 import HeaderCategoryMenu from '../HeaderCategoryMenu/HeaderCategoryMenu'
 
@@ -8,14 +9,32 @@ import './HeaderSideMenu.css'
 
 const HeaderSideMenu = ({ onClose, open, cssClass, showAccountDrawer }) => {
 
-    let username = '';
+    const { authenticate } = useContext(AuthContext);
+    const [username, setUsername] = useState('پروفایل');
     let auth = false;
-    const userInfo = JSON.parse(localStorage.getItem('user'));
-    if (userInfo) {
-        //console.log(userInfo);
-        username = userInfo.username;
-        auth = true;
-    }
+    useEffect(() => { 
+        console.log(authenticate);
+        if (authenticate) {
+            auth = true;
+            const userInfo = JSON.parse(localStorage.getItem('user'));
+            setUsername(userInfo.username);
+            console.log(userInfo);
+        }
+        // const userInfo = JSON.parse(localStorage.getItem('user'));
+
+    }, [])
+    useEffect(() => {
+        console.log(authenticate);
+        if (authenticate) {
+            auth = true;
+            const userInfo = JSON.parse(localStorage.getItem('user'));
+            setUsername(userInfo.username);
+            console.log(userInfo);
+        }
+        // const userInfo = JSON.parse(localStorage.getItem('user'));
+
+    }, [authenticate])
+    
 
     return (
         <Drawer zIndex={1002} className={cssClass} placement="right" onClose={onClose} open={open}>
@@ -27,7 +46,7 @@ const HeaderSideMenu = ({ onClose, open, cssClass, showAccountDrawer }) => {
                         <div className="nickname-section">
                             <div className="welcome">خوش آمدی!</div>
                             <div className="nickname-title">
-                                {auth ? { username } : 'پروفایل'}
+                                { username }
                             </div>
                         </div>
                     </div>

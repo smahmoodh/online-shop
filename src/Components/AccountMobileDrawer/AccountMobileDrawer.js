@@ -15,7 +15,7 @@ import { AuthContext } from '../../Context/Auth/authContext';
 
 import './AccountMobileDrawer.css';
 
-const AccountMobileDrawer = ({ cssClass, onClose, open }) => {
+const AccountMobileDrawer = ({ cssClass, onClose, open, showModal }) => {
     let username = '';
     let auth = false;
     let tt = true
@@ -28,6 +28,7 @@ const AccountMobileDrawer = ({ cssClass, onClose, open }) => {
             auth = true;
         }
     }
+
     return (
         
         <Drawer
@@ -39,10 +40,10 @@ const AccountMobileDrawer = ({ cssClass, onClose, open }) => {
             open={open}
             getContainer={'#root'}
         >
-            {tt ?
+            {authenticate ?
                 <ul>
-                    <li class="btn-dialog-exit">
-                        <a href="#" class="btn-dialog exit-userbox">
+                    <li className="btn-dialog-exit">
+                        <a href="#" className="btn-dialog exit-userbox">
                             <LogoutOutlined />
                             خروج
                         </a>
@@ -75,7 +76,7 @@ const AccountMobileDrawer = ({ cssClass, onClose, open }) => {
                 :
                 <ul>
                     <li>
-                        <a href="#" class="btn-dialog">
+                        <a href="#" className="btn-dialog" onClick={showModal} >
                             <UserOutlined />
                             ورود
                         </a>

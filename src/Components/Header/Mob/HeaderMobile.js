@@ -6,6 +6,7 @@ import HeaderCartButton from '../HeaderCartButton/HeaderCartButton';
 import SearchBox from '../HeaderSerachBox/SearchBox';
 import HeaderSideMenu from './HeaderSideMenu/HeaderSideMenu';
 import AccountMobileDrawer from '../../AccountMobileDrawer/AccountMobileDrawer';
+import LoginModal from '../../LoginModal/LoginModal';
 
 import './HeaderMobile.css';
 
@@ -26,6 +27,15 @@ const HeaderMobile = () => {
     const onCloseAccountDrawer = () => {
         setOpenAccountDrawer(false);
     };
+
+    const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+    const showModal = () => {
+        onCloseAccountDrawer();
+        setIsLoginModalOpen(true);
+    };
+    const handleLoginModalCancel = () => {
+        setIsLoginModalOpen(false);
+    }
     return (
         <>
             <div className="clearfix">
@@ -40,8 +50,9 @@ const HeaderMobile = () => {
                     <SearchBox />
                 </div>
                 <HeaderSideMenu onClose={onClose} open={open} cssClass="side-menu" showAccountDrawer={showAccountDrawer} />
-                <AccountMobileDrawer cssClass={'account-drawer'} onClose={onCloseAccountDrawer} open={openAccountDrawer} />
+                <AccountMobileDrawer cssClass={'account-drawer'} onClose={onCloseAccountDrawer} open={openAccountDrawer} showModal={showModal} />
             </div>
+            <LoginModal isLoginModalOpen={isLoginModalOpen} handleLoginModalCancel={handleLoginModalCancel} />
         </>
     )
 }
