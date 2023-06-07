@@ -5,47 +5,12 @@ import { DownOutlined, UserOutlined } from '@ant-design/icons';
 import { AuthContext } from '../../../../Context/Auth/authContext';
 import './HeaderAccountBox.css';
 
-const guestMenuItems = [
-    {
-        label: <Link to='/account' title='ورود / ثبت نام'>ورود / ثبت نام</Link>,
-        key: '0',
-    },
-    {
-        type: 'divider',
-    },
-    {
-        label: <span>کاربر جدید هستید؟<Link to='/account' title='ثبت نام'>ثبت نام</Link></span>,
-        key: '1',
-    }
-];
+    
 
-const registeredMenuItems = [
-    {
-        label: <Link to='/profile' title='پروفایل'>
-            پروفایل
-        </Link>,
-        key: '0',
-    },
-    {
-        label: <Link to='/orders' title='سفارش‌های من'>
-            سفارش‌های من
-        </Link>,
-        key: '1',
-    },
-    {
-        type: 'divider',
-    },
-    {
-        label: <Link to='/account' title='خروج'>
-            خروج
-        </Link>,
-        key: '3',
-    }
-];
+    let items;
 
-let items;
+const HeaderAccountBox = ({ showModal }) => {
 
-const HeaderAccountBox = () => {
     const navigate = useNavigate();
     const authContext = useContext(AuthContext);
     const logout = () => {
@@ -61,6 +26,43 @@ const HeaderAccountBox = () => {
         auth = true;
     }
     useEffect(() => {
+        const guestMenuItems = [
+            {
+                label: <div title='ورود / ثبت نام' >ورود / ثبت نام</div>,
+                key: '0',
+            },
+            {
+                type: 'divider',
+            },
+            {
+                label: <div>کاربر جدید هستید؟<div title='ثبت نام' >ثبت نام</div></div>,
+                key: '1',
+            }
+        ];
+
+        const registeredMenuItems = [
+            {
+                label: <Link to='/profile' title='پروفایل'>
+                    پروفایل
+                </Link>,
+                key: '0',
+            },
+            {
+                label: <Link to='/orders' title='سفارش‌های من'>
+                    سفارش‌های من
+                </Link>,
+                key: '1',
+            },
+            {
+                type: 'divider',
+            },
+            {
+                label: <div title='خروج'>
+                    خروج
+                </div>,
+                key: '3',
+            }
+        ];
         if (auth) {
             authContext.dispatch({ type: 'login', payload: username });
             items = [...registeredMenuItems];

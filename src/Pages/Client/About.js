@@ -4,7 +4,7 @@ import { Breadcrumb } from 'antd'
 
 function About() {
     return (
-        <>
+        <div className='container'>
             <div id="side_top">
                 <div className="box breadcrumbs clearfix">
                     <Breadcrumb
@@ -42,7 +42,7 @@ function About() {
             <div id="side_bottom">
             </div>
 
-        </>
+        </div>
     )
 }
 

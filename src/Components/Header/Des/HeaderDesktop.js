@@ -1,14 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import SearchBox from '../HeaderSerachBox/SearchBox';
 import HeaderAccountBox from './HeaderAccountBox/HeaderAccountBox';
 import HeaderCartButton from '../HeaderCartButton/HeaderCartButton';
 import HeaderCategoryMenu from './HeaderCategoryMenu/HeaderCategoryMenu';
+import LoginModal from '../../LoginModal/LoginModal';
 import { Logo } from '../../Logo/logo';
 import { Col, Row } from 'antd';
 
 import './HeaderDesktop.css';
 
+
 const HeaderDesktop = () => {
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const showModal = () => {
+    setIsLoginModalOpen(true);
+  };
+  const handleLoginModalCancel = () => {
+    setIsLoginModalOpen(false);
+  }
+
   return (
     <>
       <div className="header-top clearfix">
@@ -24,7 +34,7 @@ const HeaderDesktop = () => {
             </Col>
             <Col xs={6}>
               <div className='hedaer-user-section'>
-                <HeaderAccountBox />
+                <HeaderAccountBox showModal={showModal} />
                 <HeaderCartButton />
               </div>
             </Col>
@@ -62,6 +72,7 @@ const HeaderDesktop = () => {
           </div>
         </div>
       </div>
+      <LoginModal isLoginModalOpen={isLoginModalOpen} handleLoginModalCancel={handleLoginModalCancel} />
     </>
   )
 }

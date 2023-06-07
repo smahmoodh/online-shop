@@ -9,7 +9,7 @@ const HeaderCartItem = ({ items }) => {
             {items && (
                 <ul className="basket-items">
                     {items.map((item, index) =>
-                        <li kay={index}>
+                        <li key={index}>
                             <div className="item">
                                 <div className="image">
                                     <img src={item.image} alt={item.title} />

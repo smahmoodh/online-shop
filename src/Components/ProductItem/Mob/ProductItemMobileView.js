@@ -14,11 +14,11 @@ const ProductItemMobileView = ({product}) => {
                 </ul>
 
                 <div className="product-link">
-                    <Link to={`/product/${product.slug}`} title={product.name} className="image-product" target="_blank" >
+                    <Link to={`/product/${product.slug}`} title={product.name} className="image-product" >
                         <img src={product.thumb} data-src={product.thumb} alt={product.slug} width="400" height="300" />
                     </Link>
 
-                    <Link className="h2" to={`/product/${product.slug}`} target="_blank" title={product.name}>
+                    <Link className="h2" to={`/product/${product.slug}`} title={product.name}>
                         {product.name}
                     </Link>
                 </div>

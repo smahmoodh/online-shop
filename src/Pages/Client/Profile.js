@@ -2,7 +2,7 @@ import React from 'react'
 
 function Profile() {
     return (
-        <div>
+        <div className='container'>
             <h1>This is the Profile page</h1>
         </div>
     )

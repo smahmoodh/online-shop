@@ -24,7 +24,7 @@ const AuthContextProvider = (props) => {
             }
             case 'logout':
                 localStorage.removeItem('user');
-                //return{authenticate:false};
+                return{authenticate:false};
                 break;
             default:
                 return state;
